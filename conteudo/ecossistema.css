@@ -22,8 +22,8 @@ body {
 }
 
 header {
-    height: 50vh; /* Ocupa metade da altura da tela */
-    background-image: url('../imagens/banner.jpeg');
+    height: 50vh; 
+    background-image: url('../imagens/ecosistema.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
