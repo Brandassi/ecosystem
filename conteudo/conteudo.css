@@ -32,13 +32,19 @@ h2 {
 }
 .options {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
     margin-top: 20px;
 }
+
 .option {
-    margin: 10px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    flex: 1 1 calc(25% - 20px); 
+    max-width: calc(25% - 20px); 
+    box-sizing: border-box; 
 }
 .option img {
     max-width: 100px;
@@ -47,4 +53,8 @@ h2 {
 .option p {
     margin-top: 10px;
     font-size: 1em;
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }

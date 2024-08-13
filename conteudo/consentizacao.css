@@ -1,325 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e0f7fa;
-    margin: 0;
-    padding: 0;
+  background-color: #121816;
 }
 
 .main-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  color: #121816;
+}
+.main-container h1 {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-}
-
+    color: #121816;
+    font-weight: bold;
+  }
 header {
-    height: 50vh; /* Ocupa metade da altura da tela */
-    background-image: url('../imagens/banner.jpeg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
+  height: 50vh; 
+  background-image: url("../imagens/poluicao3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
 }
 
 header.transparente {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 header .logo {
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    width: 120px;
-    height: auto; /* Mantém a proporção da imagem */
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 120px;
+  height: auto; 
 }
 
 header .title {
-    font-size: 3em;
-    text-align: center;
+  font-size: 3em;
+  text-align: center;
 }
 
 header .close-button {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    text-decoration: none; /* Remove decoração */
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none; 
 }
 
 header .close-button:hover,
 header .close-button:focus {
-    color: #cccccc;
+  color: #cccccc;
 }
 
 .container {
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 20px;
+  background-color: #5A7079;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+  margin: 20px auto;
 }
 
-.section {
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+section {
+  margin-bottom: 20px;
 }
 
-.section h2 {
-    margin-top: 0;
+.content h2,
+.quiz-section h2 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
 
-.section p {
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: green;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.quiz-container {
-    display: flex;
-    overflow-x: scroll;
-    padding: 20px;
-    background-color: #375409;
-}
-
-.quiz-card {
-    min-width: 200px;
-    background-color: #001100;
-    margin: 0 10px;
-    padding: 150px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.sobre-nos {
-    padding: 20px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.sobre-nos img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.options {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.option {
-    margin: 10px;
-    text-align: center;
-}
-
-.option img {
-    max-width: 100px;
-    border-radius: 10px;
-}
-
-/* Estilos adicionais para limitar a largura da página e ajustá-la ao tamanho da tela do usuário */
-.container {
-    width: 100%;
-    max-width: 1440px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    padding: 20px;
-    margin: 0 auto; /* Centraliza a container horizontalmente */
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #00695c;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 10px 10px 0 0;
-}
-
-.close-button {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 20px;
-    cursor: pointer;
-    text-decoration: none; /* Remove decoração */
-}
-
-.content {
-    padding: 20px;
-}
-
-.middle-section {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-.text {
-    flex: 2;
-}
-
-.image-container {
-    flex: 1;
-}
-
-.image-container img {
-    max-width: 100px;
-    border-radius: 10px;
-}
-
-h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-p {
-    line-height: 1.6;
-    color: #555;
-    font-size: 16px;
+.content p {
+  line-height: 1.6;
+  color: #ffffff;
+  font-size: 16px;
 }
 
 .info-box {
-    background-color: #e0f7fa;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 8px;
-    color: #333;
+  background-color: #121816;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 .info-box p {
-    margin: 0;
-    font-size: 14px;
-    flex: 1;
+  margin: 0;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #00796b;
 }
 
 .info-box a {
-    display: inline-block;
-    font-size: 14px;
-    color: #00796b;
-    text-decoration: none;
-    margin-left: 10px;
+  display: inline-block;
+  font-size: 14px;
+  color: #00796b;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #20454A;
+  border-radius: 5px;
+  border: 2px solid #00796b;
+  transition: background-color 0.3s ease;
 }
 
 .info-box a:hover {
-    text-decoration: underline;
+  text-decoration: none;
+  background-color: #e0f7fa;
+}
+
+.middle-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.text {
+  flex: 2;
 }
 
 .quiz-section {
-    text-align: center;
-    background-color: #004d40;
-    color: white;
-    padding: 20px;
-    border-radius: 0 0 10px 10px;
-    margin-top: 20px;
-}
-
-.quiz-section h2 {
-    font-size: 24px;
-    color: #ffffff;
+  text-align: center;
+  background-color: #5A7079;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .quiz-section p {
-    font-size: 18px;
-    color: #e0f7fa;
+  font-size: 18px;
+  color: #e0f7fa;
 }
 
 .play-button {
-    background-color: #00796b;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
+  background-color: #20454A;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .play-button:hover {
-    background-color: #004d40;
-}
-
-@media (max-width: 600px) {
-    .header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .header-logo {
-        margin-bottom: 10px;
-    }
+  background-color: #004d40;
 }
