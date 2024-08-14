@@ -25,6 +25,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
@@ -63,6 +64,22 @@ header .close-button {
 header .close-button:hover,
 header .close-button:focus {
   color: #cccccc;
+}
+
+.navigation-arrows {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  margin-top: 20px;
+}
+
+.arrow {
+  font-size: 50px;
+  color: white;
+}
+
+.arrow:hover {
+  color: #B2FF59;
 }
 
 .container {

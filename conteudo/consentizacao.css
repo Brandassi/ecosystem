@@ -71,6 +71,23 @@ header .close-button:hover,
 header .close-button:focus {
   color: #cccccc;
 }
+.navigation-arrows {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  text-decoration: none;
+}
+
+.arrow {
+  font-size: 50px;
+  color: white;
+}
+
+.arrow:hover {
+  color: #B2FF59;
+}
 
 .container {
   background-color: #5A7079;
@@ -157,16 +174,21 @@ section {
 }
 
 .play-button {
-  background-color: #20454A;
-  color: white;
+  display: inline-block;
+  background-color: #00897b;
+  color: #ffffff;
   border: none;
   padding: 10px 20px;
-  font-size: 18px;
   cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
 
 .play-button:hover {
-  background-color: #004d40;
+  background-color: #00695c;
 }

@@ -1,12 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Titillium Web", sans-serif;
-}
-
 body {
   background-color: #554526;
 }
@@ -25,14 +16,11 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   color: white;
   position: relative;
-}
-
-header.transparente {
-  background-color: transparent;
 }
 
 header .logo {
@@ -46,6 +34,23 @@ header .logo {
 header .title {
   font-size: 3em;
   text-align: center;
+}
+
+header .arrows-container {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  margin-top: 10px; 
+}
+
+header .arrow {
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+header .arrow:hover {
+  color: #B2FF59;
 }
 
 header .close-button {
@@ -77,13 +82,14 @@ header .close-button:focus {
 .section {
   margin-bottom: 10px;
 }
+
 .section .image {
-    width: 80%; 
-    max-width: 600px; 
-    height: auto;
-    display: block;
-    margin: 10px auto; 
-  }
+  width: 80%; 
+  max-width: 600px; 
+  height: auto;
+  display: block;
+  margin: 10px auto; 
+}
 
 .section h2 {
   font-size: 24px;
