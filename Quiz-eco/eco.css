@@ -14,7 +14,7 @@ body {
 
 .quiz-container {
     height: 100vh;
-    background-image: url('./image.png'); /* Caminho da imagem de fundo */
+    background-image: url('../imagens/cont-eco.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

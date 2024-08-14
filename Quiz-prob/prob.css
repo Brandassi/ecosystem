@@ -13,7 +13,7 @@ body {
 
 .quiz-container {
     height: 100vh;
-    background-image: url('./image.png'); /* Substitua por seu próprio caminho de imagem */
+    background-image: url('../imagens/cont-poluicao.jpg'); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -18,7 +18,7 @@ body {
 .quiz-container {
     height: 100vh;
     width: 100%;
-    background-image: url('./image.png'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('../imagens/cont-reino.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,10 +32,23 @@ body {
 .quiz-header {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 20px;
     position: absolute;
     top: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
 }
 
 .close-button {

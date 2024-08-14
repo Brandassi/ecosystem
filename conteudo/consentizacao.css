@@ -18,15 +18,17 @@ body {
   margin: 0 auto;
   color: #121816;
 }
+
 .main-container h1 {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    color: #121816;
-    font-weight: bold;
-  }
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  color: #121816;
+  font-weight: bold;
+}
+
 header {
-  height: 50vh; 
+  height: 50vh;
   background-image: url("../imagens/poluicao3.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -47,7 +49,7 @@ header .logo {
   top: 10px;
   left: 20px;
   width: 120px;
-  height: auto; 
+  height: auto;
 }
 
 header .title {
@@ -64,13 +66,14 @@ header .close-button {
   color: white;
   font-size: 20px;
   cursor: pointer;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 header .close-button:hover,
 header .close-button:focus {
   color: #cccccc;
 }
+
 .navigation-arrows {
   position: absolute;
   bottom: 50px;
@@ -90,7 +93,7 @@ header .close-button:focus {
 }
 
 .container {
-  background-color: #5A7079;
+  background-color: #121816;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
@@ -115,39 +118,6 @@ section {
   font-size: 16px;
 }
 
-.info-box {
-  background-color: #121816;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  color: #333;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-.info-box p {
-  margin: 0;
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #00796b;
-}
-
-.info-box a {
-  display: inline-block;
-  font-size: 14px;
-  color: #00796b;
-  text-decoration: none;
-  padding: 10px 20px;
-  background-color: #20454A;
-  border-radius: 5px;
-  border: 2px solid #00796b;
-  transition: background-color 0.3s ease;
-}
-
-.info-box a:hover {
-  text-decoration: none;
-  background-color: #e0f7fa;
-}
 
 .middle-section {
   display: flex;
@@ -175,7 +145,7 @@ section {
 
 .play-button {
   display: inline-block;
-  background-color: #00897b;
+  background-color: #20454A;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
