@@ -81,8 +81,9 @@ body {
 .progress {
     height: 100%;
     background-color: #1ABC9C;
-    width: 20%; /* Aqui você ajusta o progresso conforme a pergunta */
+    width: 20%;
 }
+    
 
 .next-button {
     background-color: #1ABC9C;
