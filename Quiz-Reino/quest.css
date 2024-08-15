@@ -18,7 +18,7 @@ body {
 .quiz-container {
     width: 100%;
     max-width: 700px;
-    background-color: #274F47;
+    background-color: #102724;
     border-radius: 10px;
     padding: 20px;
     position: relative;
@@ -58,7 +58,7 @@ body {
 }
 
 .answer {
-    background-color: #112A25;
+    background-color: #20303C;
     color: white;
     padding: 15px;
     margin-bottom: 10px;
