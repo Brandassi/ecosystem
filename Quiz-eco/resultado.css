@@ -54,8 +54,7 @@ body {
 .button-container {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espaçamento entre os botões */
-}
+    gap: 20px; 
 
 .retry-button, .retry-again-button {
     display: inline-block;
