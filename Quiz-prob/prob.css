@@ -19,7 +19,7 @@ body {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center; 
     align-items: center;
     position: relative;
 }
@@ -62,7 +62,7 @@ body {
 .quiz-content {
     text-align: center;
     color: white;
-    margin-top: 150px;
+    
 }
 
 .quiz-title {
