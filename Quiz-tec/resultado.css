@@ -8,7 +8,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #202223;
+    background-color: #00011C;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@ body {
 .quiz-container {
     width: 100%;
     max-width: 700px;
-    background-color: #2C3E50;
+    background-color: #27518F;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -70,11 +70,11 @@ body {
 }
 
 .retry-button {
-    background-color: #1ABC9C;
+    background-color: #27518F;
 }
 
 .retry-button:hover {
-    background-color: #16A085;
+    background-color: #27518F;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 

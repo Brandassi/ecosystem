@@ -8,7 +8,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #202223;
+    background-color: #1B3304;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@ body {
 .quiz-container {
     width: 100%;
     max-width: 700px;
-    background-color: #2C3E50;
+    background-color: #142710;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -55,6 +55,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px; 
+}
 
 .retry-button, .retry-again-button {
     display: inline-block;
@@ -69,7 +70,7 @@ body {
 }
 
 .retry-button {
-    background-color: #1ABC9C;
+    background-color: #2EA720;
 }
 
 .retry-button:hover {
@@ -78,7 +79,7 @@ body {
 }
 
 .retry-again-button {
-    background-color: #3498DB; 
+    background-color: #2EA720; 
 }
 
 .retry-again-button:hover {
