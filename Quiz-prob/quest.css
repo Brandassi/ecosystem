@@ -8,12 +8,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #202223; /* Cor do fundo do corpo */
+    background-color: #202223; 
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #ffffff; /* Cor do texto do corpo */
+    color: #ffffff; 
 }
 
 .quiz-container {
@@ -33,7 +33,7 @@ body {
 .close-button {
     background: none;
     border: none;
-    color: #ffffff; /* Cor do botão de fechar */
+    color: #ffffff; 
     font-size: 30px;
     cursor: pointer;
 }
@@ -54,8 +54,8 @@ body {
 }
 
 .answer {
-    background-color: #20303C; /* Cor de fundo das respostas */
-    color: #ffffff; /* Cor do texto das respostas */
+    background-color: #20303C; 
+    color: #ffffff; 
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -65,11 +65,11 @@ body {
 }
 
 .answer:hover {
-    background-color: #202223; /* Cor ao passar o mouse */
+    background-color: #202223; 
 }
 
 .answer.selected {
-    background-color: #1ABC9C; /* Cor quando a resposta estiver selecionada */
+    background-color: #1ABC9C; 
 }
 
 .progress-container {
@@ -82,7 +82,7 @@ body {
 .progress-bar {
     width: 75%;
     height: 10px;
-    background-color: #7F8C8D; /* Cor de fundo da barra de progresso */
+    background-color: #7F8C8D; 
     border-radius: 5px;
     position: relative;
     overflow: hidden;
@@ -90,7 +90,7 @@ body {
 
 .progress {
     height: 100%;
-    background-color: #1ABC9C; /* Cor do progresso */
+    background-color: #1ABC9C;
 }
 
 .next-button {
@@ -104,5 +104,5 @@ body {
 }
 
 .next-button:hover {
-    background-color: #16A085; /* Cor ao passar o mouse no botão de próximo */
+    background-color: #16A085; 
 }
