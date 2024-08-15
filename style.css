@@ -168,5 +168,14 @@ header nav a {
   background-color: #fff;
   margin: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.)
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.
+
+1);
+  text-align: center;
+}
+
+.sobre-nos img {
+  max-width: 500px;
+  height: auto;
+  margin-top: 20px;
 }
