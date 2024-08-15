@@ -20,8 +20,8 @@ body {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
     position: relative;
 }
 
@@ -65,7 +65,7 @@ body {
 .quiz-content {
     text-align: center;
     color: white;
-    margin-top: 150px;
+    /* Removed margin-top to center the content vertically */
 }
 
 .quiz-title {
@@ -101,7 +101,7 @@ body {
 .arrow {
     font-size: 50px;
     color: white;
-    text-decoration: none;
+    text-decoration: none; /* Remove underline */
 }
 
 .arrow:hover {

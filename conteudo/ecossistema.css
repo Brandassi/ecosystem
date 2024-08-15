@@ -133,24 +133,10 @@ header .close-button:focus {
     text-align: center;
 }
 
-.sobre-nos {
-    padding: 20px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.sobre-nos img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-
 .container {
     width: 100%;
     max-width: 1440px;
-    background-color: #2ebb11;
+    background-color: #06be4d;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
