@@ -1,0 +1,51 @@
+[
+    {
+      "question": "Qual desses animais é um mamífero?",
+      "options": [
+        "Tartaruga",
+        "Tubarao",
+        "Golfinho"
+      ]
+    },
+    {
+      "question": "Qual dos seguintes animais vive em colônias altamente organizadas?",
+      "options": [
+        "Leão",
+        "Abelha",
+        "Lobo"
+      ]
+    },
+    {
+      "question": "Qual dos seguintes animais é um herbívoro?",
+      "options": [
+        "Urso",
+        "Cobra",
+        "Elefante"
+      ]
+    },
+    {
+      "question": "Qual dos seguintes animais é conhecido por sua habilidade de mudar de cor para camuflagem?",
+      "options": [
+        "Camaleão",
+        "Leopardo",
+        "Caracol"
+      ]
+    },
+    {
+      "question": "Qual é o maior mamífero terrestre?",
+      "options": [
+        "Rinoceronte",
+        "Elefante",
+        "Hipopótamo"
+      ]
+    },
+    {
+      "question": "Qual dos seguintes animais é um invertebrado?",
+      "options": [
+        "Jacaré",
+        "Polvo",
+        "Pinguim"
+      ]
+    }
+  ]
+  

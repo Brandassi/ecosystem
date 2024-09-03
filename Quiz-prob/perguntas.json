@@ -1,0 +1,51 @@
+[
+    {
+      "question": "Qual é a principal causa da poluição por plásticos nos oceanos?",
+      "options": [
+        "Pesca comercial",
+        "Descarte de resíduos",
+        "Aquecimento global"
+      ]
+    },
+    {
+      "question": "Qual prática agrícola pode ajudar a mitigar a erosão do solo?",
+      "options": [
+        "Monocultura",
+        "Rotação de culturas",
+        "Uso de fertilizantes químicos"
+      ]
+    },
+    {
+      "question": "Qual dos seguintes é um efeito das mudanças climáticas?",
+      "options": [
+        "Redução do nível do mar",
+        "Aumento da biodiversidade",
+        "Derretimento de geleiras"
+      ]
+    },
+    {
+      "question": "Qual é o principal responsável pela acidificação dos oceanos?",
+      "options": [
+        "Fertilizantes agrícolas",
+        "Dióxido de carbono",
+        "Petróleo"
+      ]
+    },
+    {
+      "question": "Qual é a principal prática que leva ao desmatamento?",
+      "options": [
+        "Agricultura",
+        "Pecuária",
+        "Construção de estradas"
+      ]
+    },
+    {
+      "question": "Qual é o principal gás de efeito estufa emitido pela queima de combustíveis fósseis?",
+      "options": [
+        "Metano",
+        "Dióxido de carbono",
+        "Oxigênio"
+      ]
+    }
+  ]
+  

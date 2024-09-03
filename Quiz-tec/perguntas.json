@@ -1,0 +1,51 @@
+[
+    {
+      "question": "Qual é a principal função dos painéis solares fotovoltaicos?",
+      "options": [
+        "Produzir energia elétrica",
+        "Aumentar a temperatura",
+        "Purificar a água"
+      ]
+    },
+    {
+      "question": "Qual tecnologia sustentável é utilizada para tratar esgotos e reduzir impactos ambientais?",
+      "options": [
+        "Incineradores de resíduos",
+        "Fossas sépticas",
+        "Sistemas de wetlands"
+      ]
+    },
+    {
+      "question": "O que caracteriza uma construção sustentável?",
+      "options": [
+        "Uso de materiais não recicláveis",
+        "Baixo consumo de energia",
+        "Baixa eficiência energética"
+      ]
+    },
+    {
+      "question": "Qual dos seguintes é um exemplo de transporte sustentável?",
+      "options": [
+        "Carro a gasolina",
+        "Avião",
+        "Bicicleta"
+      ]
+    },
+    {
+      "question": "Qual das seguintes tecnologias ajuda a reduzir a erosão do solo em áreas urbanas?",
+      "options": [
+        "Telhados verdes",
+        "Painéis solares",
+        "Uso de asfalto permeável"
+      ]
+    },
+    {
+      "question": "Qual é a principal vantagem da energia solar?",
+      "options": [
+        "Disponibilidade ilimitada",
+        "Emissões de carbono elevadas",
+        "Altos custos de produção"
+      ]
+    }
+  ]
+  

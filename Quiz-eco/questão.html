@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz de Conscientização Ambiental</title>
+    <script src="questão.js" defer></script>
     <link rel="stylesheet" href="questão.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <div class="header">
-            <button class="close-button">X</button>
+    <div class="quiz">
+        <div class="cabecalho">
+            <button class="botao-fechar">X</button>
         </div>
-        <div class="question-container">
-            <h2 id="question-title">Qual é o maior bioma terrestre?</h2>
-            <ul id="answers-list">
-                <li class="answer">Floresta Amazônica</li>
-                <li class="answer">Tundra Ártica</li>
-                <li class="answer">Deserto do Saara</li>
-                <li class="answer">Taiga Siberiana</li>
+        <div class="pergunta">
+            <h2 id="titulo-pergunta">Qual é o maior bioma terrestre?</h2>
+            <ul id="lista-respostas">
+                <li class="resposta">Floresta Amazônica</li>
+                <li class="resposta">Tundra Ártica</li>
+                <li class="resposta">Deserto do Saara</li>
+                <li class="resposta">Taiga Siberiana</li>
             </ul>
         </div>
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress"></div>
+        <div class="barra-progresso">
+            <div class="barra">
+                <div class="progresso"></div>
             </div>
-            <button id="next-button" class="next-button">Próximo</button>
+            <button id="botao-proximo" class="botao-proximo">Próximo</button>
         </div>
     </div>
+
+    
 </body>
 </html>

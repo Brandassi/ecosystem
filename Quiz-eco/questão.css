@@ -10,7 +10,7 @@ body {
     color: #ffffff;
 }
 
-.quiz-container {
+.quiz {
     width: 100%;
     max-width: 700px;
     background-color: #142710;
@@ -20,12 +20,12 @@ body {
     position: relative;
 }
 
-.header {
+.cabecalho {
     display: flex;
     justify-content: flex-end;
 }
 
-.close-button {
+.botao-fechar {
     background: none;
     border: none;
     color: #ffffff;
@@ -33,22 +33,22 @@ body {
     cursor: pointer;
 }
 
-.question-container {
+.pergunta {
     text-align: center;
     margin-bottom: 20px;
 }
 
-#question-title {
+#titulo-pergunta {
     font-size: 18px;
     margin-bottom: 20px;
 }
 
-#answers-list {
+#lista-respostas {
     list-style: none;
     padding: 0;
 }
 
-.answer {
+.resposta {
     background-color: #1A472A;
     color: #ffffff;
     padding: 15px;
@@ -58,18 +58,18 @@ body {
     text-align: center;
 }
 
-.answer:hover {
+.resposta:hover {
     background-color: #155923;
 }
 
-.progress-container {
+.barra-progresso {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
 }
 
-.progress-bar {
+.barra {
     width: 75%;
     height: 10px;
     background-color: #0B3D0D;
@@ -78,14 +78,13 @@ body {
     overflow: hidden;
 }
 
-.progress {
+.progresso {
     height: 100%;
     background-color: #1ABC9C;
     width: 20%;
 }
-    
 
-.next-button {
+.botao-proximo {
     background-color: #1ABC9C;
     color: #ffffff;
     border: none;
@@ -94,6 +93,6 @@ body {
     cursor: pointer;
 }
 
-.next-button:hover {
+.botao-proximo:hover {
     background-color: #16A085;
 }

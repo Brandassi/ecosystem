@@ -8,54 +8,54 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #202223; 
+    background-color: #202223;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #ffffff; 
+    color: #ffffff;
 }
 
-.quiz-container {
+.container-quiz {
     width: 100%;
     max-width: 700px;
-    background-color: #000000; 
+    background-color: #000000;
     border-radius: 10px;
     padding: 20px;
     position: relative;
 }
 
-.quiz-header {
+.cabecalho-quiz {
     display: flex;
     justify-content: flex-end;
 }
 
-.close-button {
+.botao-fechar {
     background: none;
     border: none;
-    color: #ffffff; 
+    color: #ffffff;
     font-size: 30px;
     cursor: pointer;
 }
 
-.quiz-content {
+.conteudo-quiz {
     text-align: center;
     margin-bottom: 20px;
 }
 
-#question-title {
+#titulo-pergunta {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-#answers-list {
+#lista-respostas {
     list-style: none;
     padding: 0;
 }
 
-.answer {
-    background-color: #20303C; 
-    color: #ffffff; 
+.resposta {
+    background-color: #20303C;
+    color: #ffffff;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -64,37 +64,37 @@ body {
     transition: background-color 0.3s;
 }
 
-.answer:hover {
-    background-color: #202223; 
+.resposta:hover {
+    background-color: #202223;
 }
 
-.answer.selected {
-    background-color: #1ABC9C; 
+.resposta.selecionada {
+    background-color: #1ABC9C;
 }
 
-.progress-container {
+.container-progresso {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
 }
 
-.progress-bar {
+.barra-progresso {
     width: 75%;
     height: 10px;
-    background-color: #7F8C8D; 
+    background-color: #7F8C8D;
     border-radius: 5px;
     position: relative;
     overflow: hidden;
 }
 
-.progress {
+.progresso {
     height: 100%;
     background-color: #1ABC9C;
 }
 
-.next-button {
-    background-color: #1ABC9C; 
+.botao-proximo {
+    background-color: #1ABC9C;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -103,6 +103,6 @@ body {
     transition: background-color 0.3s;
 }
 
-.next-button:hover {
-    background-color: #16A085; 
+.botao-proximo:hover {
+    background-color: #16A085;
 }

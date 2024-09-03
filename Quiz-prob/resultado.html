@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado do Quiz</title>
+    <script src="resultado.js" defer></script>
     <link rel="stylesheet" href="resultado.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <div class="header">
-            <button href="../index.html"  class="close-button">X</button>
+    <div class="container-resultado">
+        <div class="cabecalho">
+            <button href="../index.html" class="botao-fechar">X</button>
         </div>
-        <div class="result-content">
+        <div class="conteudo-resultado">
             <h2>Parabéns!</h2>
-            <p>Você acertou <span id="correct-answers">X</span> questão(s)!</p>
-            <div class="button-container">
-                <a href="outra_pagina.html" class="retry-button">Fazer outro quiz</a>
-                <a href="prob.html" class="retry-again-button">Fazer novamente</a>
+            <p>Você acertou <span id="respostas-certas">X</span> questão(s)!</p>
+            <div class="container-botoes">
+                <a href="../Quiz-eco/eco.html" class="botao-repetir">Fazer outro quiz</a>
+                <a href="prob.html" class="botao-repetir-novamente">Fazer novamente</a>
             </div>
         </div>
     </div>
