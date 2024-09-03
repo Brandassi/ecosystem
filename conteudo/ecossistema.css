@@ -1,160 +1,169 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
 }
 
 body {
-    background-color: #375409;
-    margin: 0;
-    padding: 0;
+  background-color: #375409;
+  margin: 0;
+  padding: 0;
 }
 
 .main-container {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    color: #ffffff;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  color: #ffffff;
 }
 
 header {
-    height: 50vh; 
-    background-image: url('../imagens/ecosistema.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
+  height: 50vh;
+  background-image: url("../imagens/ecosistema.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
 }
 
 header .logo {
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    width: 120px;
-    height: auto;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 120px;
+  height: auto;
 }
 
 header .title {
-    font-size: 3em;
-    text-align: center;
+  font-size: 3em;
+  text-align: center;
 }
 
-header .close-button {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    text-decoration: none;
+header .fechar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-header .close-button:hover,
-header .close-button:focus {
-    color: #cccccc;
+header .fechar:hover,
+header .fechar:focus {
+  color: #cccccc;
 }
 
-header .navigation-arrows {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    position: absolute;
-    bottom: 50px;
-    right: 20px;
+header .navegacao {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
 }
 
-header .arrow {
-    font-size: 50px;
-    color: white;
-    text-decoration: none;
+header .seta {
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
 }
 
-header .arrow:hover {
-    color: #B2FF59;
+header .seta:hover {
+  color: #b2ff59;
 }
 
 .container {
-    background-color: #375409;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 20px;
-    margin: 20px auto;
+  background-color: #375409;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+  margin: 20px auto;
 }
 
-.section {
-    margin-bottom: 20px;
+.secao {
+  margin-bottom: 20px;
 }
 
-.section h2 {
-    font-size: 24px;
-    color: #ffffff;
-    margin-bottom: 10px;
+.secao h2 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
 
-.section p {
-    line-height: 1.6;
-    color: #ffffff;
-    font-size: 16px;
+.secao p {
+  line-height: 1.6;
+  color: #ffffff;
+  font-size: 16px;
 }
 
-.middle-section {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
+.meio-secao {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-.text {
-    flex: 2;
+.texto {
+  flex: 2;
 }
 
-.image-container {
-    flex: 1;
-    padding-left: 20px;
+.imagem-container {
+  flex: 1;
+  padding-left: 20px;
 }
 
-.image-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+.imagem-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-.quiz-section {
-    background-color: #0a3504;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px;
-    border-radius: 0 0 10px 10px;
+.quiz-secao {
+  background-color: #0a3504;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
 }
 
-.play-button {
-    display: inline-block;
-    background-color: #375409;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+.jogar {
+  display: inline-block;
+  background-color: #375409;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.play-button:hover {
-    background-color: #00695c;
+.jogar:hover {
+  background-color: #6f4f28;
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.jogar:active {
+  background-color: #4b3a1b;
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

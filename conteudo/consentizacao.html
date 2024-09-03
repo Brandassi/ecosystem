@@ -1,52 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conscientização Ambiental</title>
-    <link rel="stylesheet" href="../conteudo/consentizacao.css">
-    <link rel="stylesheet" href="../conteudo/consentizacao.css">
-</head>
-<body>
-    <div class="main-container">
-        <header class="transparente">
-            <img src="../logo.png" alt="Logo" class="logo">
-            <h1 class="title">Conscientização Ambiental</h1>
-            <a href="../index.html" class="close-button">X</a>
-            <div class="navigation-arrows"> 
-                <a href="../conteudo/reino.html" class="arrow">&#8249;</a>
-                <a href="../conteudo/tecnologia.html" class="arrow">&#8250;</a> 
-            </div>
-        </header>
-        <div class="container">
-            <section class="content">
-                <h2>Mudanças Climáticas</h2>
-                <p>
-                    As mudanças climáticas representam uma das maiores ameaças à vida na Terra. A queima de combustíveis fósseis, o desmatamento e outras atividades humanas estão aumentando as concentrações de gases de efeito estufa na atmosfera, levando a temperaturas globais mais altas, eventos climáticos extremos e acidificação dos oceanos.
-                </p>
-                <h2>Perda de Biodiversidade</h2>
-                <p>
-                    A perda de biodiversidade é outro grande desafio que enfrentamos. A destruição de habitats naturais, o excesso de exploração de recursos naturais e a introdução de espécies invasoras estão levando à extinção rápida de muitas espécies em todo o mundo.
-                </p>
-                <h2>Poluição</h2>
-                <p>
-                    A poluição do ar, da água e do solo é um problema crescente em muitas regiões. O uso excessivo de produtos químicos, plásticos e outros materiais gera resíduos indesejados e poluentes químicos que estão causando significativos danos à saúde humana e ao meio ambiente.
-                </p>
-                <h2>Consumo de Recursos Naturais</h2>
-                <p>
-                    A demanda crescente por recursos naturais, como água, energia, alimentos e minerais, está colocando uma pressão insustentável sobre os ecossistemas do planeta. É necessário um uso mais eficiente e sustentável desses recursos para garantir a sobrevivência a longo prazo.
-                </p>
-                <h2>Coletivo Ambiental</h2>
-                <p>
-                    Enfrentar os problemas ambientais requer um esforço coletivo de toda a sociedade. Devemos adotar práticas sustentáveis em nosso cotidiano e apoiar políticas ambientais que promovam a conservação e a sustentabilidade. Desse modo, poderemos garantir um futuro mais saudável e equilibrado para o nosso planeta.
-                </p>
-            </section>
-            <section class="quiz-section">
-                <h2>Teste Seu Conhecimento</h2>
-                <p>Ponha à prova o que aprendeu sobre problemas ambientais com nosso quiz interativo!</p>
-                <a href="../Quiz-prob/prob.html" class="play-button">JOGAR</a>
-            </section>
+    <script src="consentizacao.js" defer></script>
+    <link rel="stylesheet" href="consentizacao.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="cabecalho">
+        <img src="../logo.png" alt="Logo" class="logo" />
+        <h1 class="titulo">Conscientização Ambiental</h1>
+        <button class="fechar" onclick="window.location.href='../index.html'">
+          X
+        </button>
+        <div class="setas-navegacao">
+          <a href="../conteudo/reino.html" class="seta">&#8249;</a>
+          <a href="../conteudo/tecnologia.html" class="seta">&#8250;</a>
         </div>
+      </header>
+      <div class="conteudo">
+        <section class="secao">
+          <h2>Mudanças Climáticas</h2>
+          <p>
+            As mudanças climáticas representam uma das maiores ameaças à vida na
+            Terra. A queima de combustíveis fósseis, o desmatamento e outras
+            atividades humanas estão aumentando as concentrações de gases de
+            efeito estufa na atmosfera, levando a temperaturas globais mais
+            altas, eventos climáticos extremos e acidificação dos oceanos.
+          </p>
+          <h2>Perda de Biodiversidade</h2>
+          <p>
+            A perda de biodiversidade é outro grande desafio que enfrentamos. A
+            destruição de habitats naturais, o excesso de exploração de recursos
+            naturais e a introdução de espécies invasoras estão levando à
+            extinção rápida de muitas espécies em todo o mundo.
+          </p>
+          <h2>Poluição</h2>
+          <p>
+            A poluição do ar, da água e do solo é um problema crescente em
+            muitas regiões. O uso excessivo de produtos químicos, plásticos e
+            outros materiais gera resíduos indesejados e poluentes químicos que
+            estão causando significativos danos à saúde humana e ao meio
+            ambiente.
+          </p>
+          <h2>Consumo de Recursos Naturais</h2>
+          <p>
+            A demanda crescente por recursos naturais, como água, energia,
+            alimentos e minerais, está colocando uma pressão insustentável sobre
+            os ecossistemas do planeta. É necessário um uso mais eficiente e
+            sustentável desses recursos para garantir a sobrevivência a longo
+            prazo.
+          </p>
+          <h2>Coletivo Ambiental</h2>
+          <p>
+            Enfrentar os problemas ambientais requer um esforço coletivo de toda
+            a sociedade. Devemos adotar práticas sustentáveis em nosso cotidiano
+            e apoiar políticas ambientais que promovam a conservação e a
+            sustentabilidade. Desse modo, poderemos garantir um futuro mais
+            saudável e equilibrado para o nosso planeta.
+          </p>
+        </section>
+        <section class="secao-quiz">
+          <h2>Teste Seu Conhecimento</h2>
+          <p>
+            Ponha à prova o que aprendeu sobre problemas ambientais com nosso
+            quiz interativo!
+          </p>
+          <a href="../Quiz-prob/prob.html" class="botao-jogar">JOGAR</a>
+        </section>
+      </div>
     </div>
-</body>
+  </body>
 </html>

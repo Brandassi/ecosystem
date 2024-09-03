@@ -1,88 +1,89 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #1B3304;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #1b3304;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .quiz-container {
-    width: 100%;
-    max-width: 700px;
-    background-color: #142710;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-align: center;
-    position: relative;
+  width: 100%;
+  max-width: 700px;
+  background-color: #142710;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  position: relative;
 }
 
 .header {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .close-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 .result-content h2 {
-    font-size: 32px;
-    color: white;
-    margin-bottom: 20px;
+  font-size: 32px;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .result-content p {
-    font-size: 20px;
-    color: white;
-    margin-bottom: 40px;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 40px;
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px; 
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.retry-button, .retry-again-button {
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 8px; 
-    transition: background-color 0.3s, box-shadow 0.3s;
+.retry-button,
+.retry-again-button {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .retry-button {
-    background-color: #2EA720;
+  background-color: #2ea720;
 }
 
 .retry-button:hover {
-    background-color: #16A085;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #16a085;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .retry-again-button {
-    background-color: #2EA720; 
+  background-color: #2ea720;
 }
 
 .retry-again-button:hover {
-    background-color: #2980B9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #2980b9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

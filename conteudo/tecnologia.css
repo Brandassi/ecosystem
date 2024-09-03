@@ -20,7 +20,7 @@ body {
 
 header {
   height: 50vh;
-  background-image: url("../imagens/tecnologia.jpg"); 
+  background-image: url("../imagens/tecnologia.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -60,7 +60,7 @@ header .arrow {
 }
 
 header .arrow:hover {
-  color: #B2FF59;
+  color: #b2ff59;
 }
 
 header .close-button {
@@ -94,11 +94,11 @@ header .close-button:focus {
 }
 
 .section img {
-  width: 80%; 
-  max-width: 600px; 
+  width: 80%;
+  max-width: 600px;
   height: auto;
   display: block;
-  margin: 10px auto; 
+  margin: 10px auto;
 }
 
 .section h2 {
@@ -111,11 +111,6 @@ header .close-button:focus {
   line-height: 1.6;
   color: #ffffff;
   font-size: 16px;
-}
-
-
-.action-button:hover {
-  background-color: #004d40;
 }
 
 .quiz-section {
@@ -149,9 +144,23 @@ header .close-button:focus {
   text-align: center;
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .play-button:hover {
   background-color: #00695c;
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.play-button:active {
+  transform: scale(1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.play-button.clicked {
+  background-color: #004d40;
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }

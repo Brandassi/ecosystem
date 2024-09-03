@@ -1,98 +1,98 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1B3B24;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    color: #ffffff;
+  font-family: Arial, sans-serif;
+  background-color: #1b3b24;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #ffffff;
 }
 
 .quiz {
-    width: 100%;
-    max-width: 700px;
-    background-color: #142710;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    position: relative;
+  width: 100%;
+  max-width: 700px;
+  background-color: #142710;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  position: relative;
 }
 
 .cabecalho {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .botao-fechar {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 20px;
-    cursor: pointer;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .pergunta {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 #titulo-pergunta {
-    font-size: 18px;
-    margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 #lista-respostas {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .resposta {
-    background-color: #1A472A;
-    color: #ffffff;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
+  background-color: #1a472a;
+  color: #ffffff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
 }
 
 .resposta:hover {
-    background-color: #155923;
+  background-color: #155923;
 }
 
 .barra-progresso {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .barra {
-    width: 75%;
-    height: 10px;
-    background-color: #0B3D0D;
-    border-radius: 5px;
-    position: relative;
-    overflow: hidden;
+  width: 75%;
+  height: 10px;
+  background-color: #0b3d0d;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
 }
 
 .progresso {
-    height: 100%;
-    background-color: #1ABC9C;
-    width: 20%;
+  height: 100%;
+  background-color: #1abc9c;
+  width: 20%;
 }
 
 .botao-proximo {
-    background-color: #1ABC9C;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
+  background-color: #1abc9c;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .botao-proximo:hover {
-    background-color: #16A085;
+  background-color: #16a085;
 }

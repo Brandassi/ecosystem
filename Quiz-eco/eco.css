@@ -1,109 +1,108 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #001100;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #001100;
 }
 
 .quiz-container {
-    height: 100vh;
-    background-image: url('../imagens/cont-eco.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;    
-    align-items: center;
-    position: relative;
+  height: 100vh;
+  background-image: url("../imagens/cont-eco.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .quiz-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-    width: 50px;
-    height: auto;
-    margin-right: 10px;
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
 }
 
 .site-name {
-    font-size: 20px;
-    color: white;
-    font-family: 'Titillium Web', sans-serif;
+  font-size: 20px;
+  color: white;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .close-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 30px;
-    text-decoration: none;
-    cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .quiz-content {
-    text-align: center;
-    color: white;
-    
+  text-align: center;
+  color: white;
 }
 
 .quiz-title {
-    font-size: 48px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .play-button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 24px;
-    cursor: pointer;
-    text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .play-button:hover {
-    background-color: #333;
+  background-color: #333;
 }
 
 .navigation-arrows {
-    position: absolute;
-    bottom: 50px;
-    display: flex;
-    justify-content: space-between;
-    width: 100px;
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
 }
 
 .arrow {
-    font-size: 50px;
-    color: white;
-    text-decoration: none;
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
 }
 
 .arrow:hover {
-    color: #B2FF59;
+  color: #b2ff59;
 }

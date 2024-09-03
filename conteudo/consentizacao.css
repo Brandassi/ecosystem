@@ -12,14 +12,14 @@ body {
   background-color: #121816;
 }
 
-.main-container {
+.container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   color: #121816;
 }
 
-.main-container h1 {
+.container h1 {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -27,7 +27,7 @@ body {
   font-weight: bold;
 }
 
-header {
+.cabecalho {
   height: 50vh;
   background-image: url("../imagens/poluicao3.jpg");
   background-position: center;
@@ -40,11 +40,7 @@ header {
   position: relative;
 }
 
-header.transparente {
-  background-color: transparent;
-}
-
-header .logo {
+.cabecalho .logo {
   position: absolute;
   top: 10px;
   left: 20px;
@@ -52,12 +48,12 @@ header .logo {
   height: auto;
 }
 
-header .title {
+.cabecalho .titulo {
   font-size: 3em;
   text-align: center;
 }
 
-header .close-button {
+.cabecalho .fechar {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -66,15 +62,14 @@ header .close-button {
   color: white;
   font-size: 20px;
   cursor: pointer;
-  text-decoration: none;
 }
 
-header .close-button:hover,
-header .close-button:focus {
+.cabecalho .fechar:hover,
+.cabecalho .fechar:focus {
   color: #cccccc;
 }
 
-.navigation-arrows {
+.setas-navegacao {
   position: absolute;
   bottom: 50px;
   display: flex;
@@ -83,16 +78,16 @@ header .close-button:focus {
   text-decoration: none;
 }
 
-.arrow {
+.seta {
   font-size: 50px;
   color: white;
 }
 
-.arrow:hover {
-  color: #B2FF59;
+.seta:hover {
+  color: #b2ff59;
 }
 
-.container {
+.conteudo {
   background-color: #121816;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -101,51 +96,38 @@ header .close-button:focus {
   margin: 20px auto;
 }
 
-section {
+.secao {
   margin-bottom: 20px;
 }
 
-.content h2,
-.quiz-section h2 {
+.secao h2 {
   font-size: 24px;
   color: #ffffff;
   margin-bottom: 10px;
 }
 
-.content p {
+.secao p {
   line-height: 1.6;
   color: #ffffff;
   font-size: 16px;
 }
 
-
-.middle-section {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.text {
-  flex: 2;
-}
-
-.quiz-section {
+.secao-quiz {
   text-align: center;
-  background-color: #5A7079;
+  background-color: #5a7079;
   color: white;
   padding: 20px;
   border-radius: 10px;
 }
 
-.quiz-section p {
+.secao-quiz p {
   font-size: 18px;
   color: #e0f7fa;
 }
 
-.play-button {
+.botao-jogar {
   display: inline-block;
-  background-color: #20454A;
+  background-color: #20454a;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -156,9 +138,18 @@ section {
   text-align: center;
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.play-button:hover {
+.botao-jogar:hover {
   background-color: #00695c;
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.botao-jogar:active {
+  background-color: #004d40;
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

@@ -46,7 +46,7 @@ header .title {
   text-align: center;
 }
 
-header .navigation-arrows {
+header .navegacao {
   display: flex;
   justify-content: space-between;
   width: 100px;
@@ -54,17 +54,17 @@ header .navigation-arrows {
   bottom: 50px;
 }
 
-header .arrow {
+header .seta {
   font-size: 50px;
   color: white;
   text-decoration: none;
 }
 
-header .arrow:hover {
-  color: #B2FF59;
+header .seta:hover {
+  color: #b2ff59;
 }
 
-header .close-button {
+header .fechar {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -76,8 +76,8 @@ header .close-button {
   text-decoration: none;
 }
 
-header .close-button:hover,
-header .close-button:focus {
+header .fechar:hover,
+header .fechar:focus {
   color: #cccccc;
 }
 
@@ -90,11 +90,11 @@ header .close-button:focus {
   margin: 20px auto;
 }
 
-.section {
+.secao {
   margin-bottom: 20px;
 }
 
-.section .image {
+.secao .imagem {
   width: 80%;
   max-width: 600px;
   height: auto;
@@ -102,72 +102,27 @@ header .close-button:focus {
   margin: 10px auto;
 }
 
-.section h2 {
+.secao h2 {
   font-size: 24px;
   color: #ffffff;
   margin-bottom: 10px;
 }
 
-.section p {
+.secao p {
   line-height: 1.6;
   color: #ffffff;
   font-size: 16px;
 }
 
-.action-button {
-  background-color: #00796b;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px 2px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.action-button:hover {
-  background-color: #004d40;
-}
-
-.quiz-section {
-  background-color: #A07E4E;
+.quiz-secao {
+  background-color: #a07e4e;
   color: #ffffff;
   text-align: center;
   padding: 20px;
   border-radius: 0 0 10px 10px;
 }
-.quiz-container {
-  display: flex;
-  overflow-x: scroll;
-  padding: 20px;
-  background-color: #375409;
-}
 
-.quiz-card {
-  min-width: 200px;
-  background-color: #001100;
-  margin: 0 10px;
-  padding: 150px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-
-.quiz-section h2 {
-  font-size: 24px;
-  color: #ffffff;
-}
-
-.quiz-section p {
-  font-size: 18px;
-  color: #e0f7fa;
-}
-
-.play-button {
+.jogar {
   display: inline-block;
   background-color: #554526;
   color: #ffffff;
@@ -180,9 +135,18 @@ header .close-button:focus {
   text-align: center;
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.play-button:hover {
-  background-color: #00695c;
+.jogar:hover {
+  background-color: #6f4f28;
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.jogar:active {
+  background-color: #4b3a1b;
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
