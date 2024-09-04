@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let perguntaIndex = 0;
     let acertos = 0;
 
-   
     function carregarPergunta() {
         fetch('perguntas.json')
             .then(response => response.json())
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const pergunta = data.perguntas[perguntaIndex];
                 perguntaTitulo.textContent = pergunta.questao;
                 listaRespostas.innerHTML = '';
-                
+
                 pergunta.respostas.forEach(resposta => {
                     const li = document.createElement('li');
                     li.className = 'resposta';
@@ -24,13 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     listaRespostas.appendChild(li);
                 });
 
-                
-                progresso.style.width = `${(perguntaIndex + 1) * 20}%`;
+                progresso.style.width = `${(perguntaIndex + 1) / data.perguntas.length * 100}%`;
             })
             .catch(error => console.error('Erro ao carregar perguntas:', error));
     }
 
-   
     function selecionarResposta(elemento, respostaCerta) {
         const respostas = document.querySelectorAll('.resposta');
         respostas.forEach(resposta => resposta.classList.remove('selecionada'));
@@ -38,9 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         respostaSelecionada = elemento.textContent;
     }
 
-    
     function avancar() {
-        if (respostaSelecionada === null) {
+        if (!respostaSelecionada) {
             alert('Por favor, selecione uma resposta.');
             return;
         }
@@ -52,9 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         respostaSelecionada = null;
         perguntaIndex++;
-        
+
         if (perguntaIndex >= 1) {
-            
             localStorage.setItem('acertos', acertos);
             window.location.href = 'resultado.html';
         } else {
@@ -64,4 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     botaoProximo.addEventListener('click', avancar);
     carregarPergunta();
+
+   
+    window.addEventListener('beforeunload', (event) => {
+        if (respostaSelecionada !== null || perguntaIndex > 0) {
+            event.preventDefault();
+            event.returnValue = ''; 
+        }
+    });
 });

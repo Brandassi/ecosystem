@@ -6,35 +6,42 @@ document.addEventListener('DOMContentLoaded', () => {
     let respostaSelecionada = null;
     let perguntaIndex = 0;
     let acertos = 0;
-
+    let perguntas = []; 
 
     function carregarPergunta() {
         fetch('perguntas.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na resposta da rede');
+                }
+                return response.json();
+            })
             .then(data => {
-                const pergunta = data.perguntas[perguntaIndex];
-                perguntaTitulo.textContent = pergunta.questao;
+                if (!Array.isArray(data.perguntas) || data.perguntas.length === 0) {
+                    throw new Error('Dados inválidos ou vazios');
+                }
+
+                perguntas = data.perguntas; 
+                const pergunta = perguntas[perguntaIndex];
+                perguntaTitulo.textContent = pergunta.question;
 
                 botoesOpcoes.forEach((botao, index) => {
-                    botao.textContent = pergunta.respostas[index];
-                    botao.onclick = () => selecionarResposta(botao, index === pergunta.resposta_certa);
+                    botao.textContent = pergunta.options[index];
+                    botao.onclick = () => selecionarResposta(botao, index === pergunta.correctOption);
                 });
 
-                
-                const larguraProgresso = ((perguntaIndex + 1) / data.perguntas.length) * 100;
+                const larguraProgresso = ((perguntaIndex + 1) / perguntas.length) * 100;
                 progressoPreencher.style.width = `${larguraProgresso}%`;
             })
             .catch(error => console.error('Erro ao carregar perguntas:', error));
     }
 
-   
-    function selecionarResposta(botao, estaCorreta) {
+    function selecionarResposta(botaoSelecionado, estaCorreta) {
         botoesOpcoes.forEach(botao => botao.classList.remove('selecionada'));
-        botao.classList.add('selecionada');
+        botaoSelecionado.classList.add('selecionada');
         respostaSelecionada = estaCorreta;
     }
 
-   
     function avancar() {
         if (respostaSelecionada === null) {
             alert('Por favor, selecione uma resposta.');
@@ -48,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         respostaSelecionada = null;
         perguntaIndex++;
 
-        if (perguntaIndex >= 5) { 
+        if (perguntaIndex >= perguntas.length) { 
             localStorage.setItem('acertos', acertos);
             window.location.href = 'resultado.html';
         } else {
@@ -58,4 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     botaoProximo.addEventListener('click', avancar);
     carregarPergunta();
+
+    
+    window.addEventListener('beforeunload', (event) => {
+        if (respostaSelecionada !== null || perguntaIndex > 0) {
+            event.preventDefault();
+            event.returnValue = '';
+        }
+    });
 });

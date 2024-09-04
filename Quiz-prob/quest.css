@@ -6,8 +6,6 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-color: #202223;
     display: flex;
     justify-content: center;
@@ -50,7 +48,6 @@ body {
 
 #lista-respostas {
     list-style: none;
-    padding: 0;
 }
 
 .resposta {
@@ -84,8 +81,6 @@ body {
     height: 10px;
     background-color: #7F8C8D;
     border-radius: 5px;
-    position: relative;
-    overflow: hidden;
 }
 
 .progresso {

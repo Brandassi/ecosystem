@@ -1,51 +1,56 @@
 [
-    {
+  {
       "question": "Qual é o principal impacto das mudanças climáticas nos ecossistemas marinhos?",
       "options": [
-        "Acidificação da acidificação",
-        "Extinção de espécies",
-        "Destruição de habitats"
-      ]
-    },
-    {
+          "Acidificação da acidificação",
+          "Extinção de espécies",
+          "Destruição de habitats"
+      ],
+      "correctOption": 0
+  },
+  {
       "question": "Qual é o bioma caracterizado por ter árvores que perdem suas folhas no outono?",
       "options": [
-        "Floresta temperada",
-        "Savanas",
-        "Tundra"
-      ]
-    },
-    {
+          "Floresta temperada",
+          "Savanas",
+          "Tundra"
+      ],
+      "correctOption": 0
+  },
+  {
       "question": "Qual é a função principal dos decompositores em um ecossistema?",
       "options": [
-        "Produção de oxigênio",
-        "Decomposição de matéria orgânica",
-        "Regulação de herbívoros"
-      ]
-    },
-    {
+          "Produção de oxigênio",
+          "Decomposição de matéria orgânica",
+          "Regulação de herbívoros"
+      ],
+      "correctOption": 1
+  },
+  {
       "question": "Qual é a principal ameaça aos ecossistemas florestais tropicais?",
       "options": [
-        "Incêndios naturais",
-        "Desmatamento",
-        "Mudança climática"
-      ]
-    },
-    {
+          "Incêndios naturais",
+          "Desmatamento",
+          "Mudança climática"
+      ],
+      "correctOption": 1
+  },
+  {
       "question": "Qual dos seguintes fatores não é um serviço pelos ecossistemas?",
       "options": [
-        "Regulação do clima",
-        "Filtração de água",
-        "Crescimento da população humana"
-      ]
-    },
-    {
+          "Regulação do clima",
+          "Filtração de água",
+          "Crescimento da população humana"
+      ],
+      "correctOption": 2
+  },
+  {
       "question": "Qual é o maior bioma terrestre?",
       "options": [
-        "Tundra do ártico",
-        "Desertos",
-        "Floresta tropical"
-      ]
-    }
-  ]
-  
+          "Tundra do ártico",
+          "Desertos",
+          "Floresta tropical"
+      ],
+      "correctOption": 2
+  }
+]
