@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const perguntaTitulo = document.getElementById('question-title');
     const listaRespostas = document.getElementById('answers-list');
     const botaoProximo = document.getElementById('next-button');
+    const botaoFechar = document.querySelector('.close-button');
     const progresso = document.querySelector('.progress');
     let respostaSelecionada = null;
     let perguntaIndex = 0;
@@ -57,10 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function confirmarSaida() {
+        const confirmacao = confirm("Você realmente deseja sair do quiz?");
+        if (confirmacao) {
+            window.location.href = "../index.html"; 
+        }
+    }
+
     botaoProximo.addEventListener('click', avancar);
+    botaoFechar.addEventListener('click', confirmarSaida);
     carregarPergunta();
 
-
+   
     window.addEventListener('beforeunload', (event) => {
         if (respostaSelecionada !== null || perguntaIndex > 0) {
             event.preventDefault();

@@ -1,56 +1,55 @@
-[
-  {
-      "question": "Qual desses animais é um mamífero?",
-      "options": [
-          "Tartaruga",
+{
+    "perguntas": [
+      {
+        "questao": "Qual desses animais é um mamífero?",
+        "respostas": [
+          "Águia",
           "Tubarão",
-          "Golfinho"
-      ],
-      "correctOption": 2
-  },
-  {
-      "question": "Qual dos seguintes animais vive em colônias altamente organizadas?",
-      "options": [
-          "Leão",
-          "Abelha",
-          "Lobo"
-      ],
-      "correctOption": 1
-  },
-  {
-      "question": "Qual dos seguintes animais é um herbívoro?",
-      "options": [
-          "Urso",
+          "Golfinho",
+          "Peixe"
+        ],
+        "resposta_certa": 2
+      },
+      {
+        "questao": "Qual desses animais é um réptil?",
+        "respostas": [
           "Cobra",
-          "Elefante"
-      ],
-      "correctOption": 2
-  },
-  {
-      "question": "Qual dos seguintes animais é conhecido por sua habilidade de mudar de cor para camuflagem?",
-      "options": [
-          "Camaleão",
-          "Leopardo",
-          "Caracol"
-      ],
-      "correctOption": 0
-  },
-  {
-      "question": "Qual é o maior mamífero terrestre?",
-      "options": [
-          "Rinoceronte",
+          "Pinguim",
+          "Sapo",
+          "Coelho"
+        ],
+        "resposta_certa": 0
+      },
+      {
+        "questao": "Qual animal é conhecido por sua capacidade de eco localização?",
+        "respostas": [
+          "Golfinho",
           "Elefante",
+          "Tigre",
+          "Cavalo"
+        ],
+        "resposta_certa": 0
+      },
+      {
+        "questao": "Qual dos seguintes é o maior animal terrestre?",
+        "respostas": [
+          "Girafa",
+          "Elefante",
+          "Rinoceronte",
           "Hipopótamo"
-      ],
-      "correctOption": 1
-  },
-  {
-      "question": "Qual dos seguintes animais é um invertebrado?",
-      "options": [
-          "Jacaré",
-          "Polvo",
-          "Pinguim"
-      ],
-      "correctOption": 1
+        ],
+        "resposta_certa": 1
+      },
+      {
+        "questao": "Qual animal é conhecido por mudar de cor para camuflagem?",
+        "respostas": [
+          "Tartaruga",
+          "Cavalo-marinho",
+          "Camaleão",
+          "Golfinho"
+        ],
+        "resposta_certa": 2
+      }
+    ]
   }
-]
+  

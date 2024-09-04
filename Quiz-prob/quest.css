@@ -101,3 +101,6 @@ body {
 .botao-proximo:hover {
     background-color: #16A085;
 }
+.resposta.selecionada {
+    background-color: #1ABC9C; 
+}

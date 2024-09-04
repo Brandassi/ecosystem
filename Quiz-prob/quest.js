@@ -2,69 +2,79 @@ document.addEventListener('DOMContentLoaded', () => {
     const perguntaTitulo = document.getElementById('titulo-pergunta');
     const listaRespostas = document.getElementById('lista-respostas');
     const botaoProximo = document.getElementById('botao-proximo');
+    const botaoFechar = document.querySelector('.botao-fechar');
     const progresso = document.querySelector('.progresso');
     let respostaSelecionada = null;
     let perguntaIndex = 0;
     let acertos = 0;
+    let perguntas = [];
 
     function carregarPergunta() {
-        fetch('perguntas.json')
-            .then(response => response.json())
-            .then(data => {
-                const pergunta = data.perguntas[perguntaIndex];
-                perguntaTitulo.textContent = pergunta.questao;
-                listaRespostas.innerHTML = '';
+        if (perguntaIndex >= perguntas.length) {
+            localStorage.setItem('acertos', acertos);
+            window.location.href = 'resultado.html';
+            return;
+        }
 
-                pergunta.respostas.forEach(resposta => {
-                    const li = document.createElement('li');
-                    li.className = 'resposta';
-                    li.textContent = resposta;
-                    li.addEventListener('click', () => selecionarResposta(li, pergunta.resposta_certa));
-                    listaRespostas.appendChild(li);
-                });
+        const pergunta = perguntas[perguntaIndex];
+        perguntaTitulo.textContent = pergunta.question;
+        listaRespostas.innerHTML = '';
 
-                progresso.style.width = `${(perguntaIndex + 1) / data.perguntas.length * 100}%`;
-            })
-            .catch(error => console.error('Erro ao carregar perguntas:', error));
+        pergunta.options.forEach((opcao, index) => {
+            const li = document.createElement('li');
+            li.className = 'resposta';
+            li.textContent = opcao;
+            li.addEventListener('click', () => selecionarResposta(li, index === pergunta.correctOption));
+            listaRespostas.appendChild(li);
+        });
+
+        progresso.style.width = `${((perguntaIndex + 1) / perguntas.length) * 100}%`;
     }
 
-    function selecionarResposta(elemento, respostaCerta) {
+    function selecionarResposta(elemento, estaCorreta) {
         const respostas = document.querySelectorAll('.resposta');
         respostas.forEach(resposta => resposta.classList.remove('selecionada'));
         elemento.classList.add('selecionada');
-        respostaSelecionada = elemento.textContent;
+        respostaSelecionada = estaCorreta;
     }
 
     function avancar() {
-        if (!respostaSelecionada) {
+        if (respostaSelecionada === null) {
             alert('Por favor, selecione uma resposta.');
             return;
         }
 
-        const perguntaCerta = document.querySelector('.resposta.selecionada').textContent;
-        if (respostaSelecionada === perguntaCerta) {
+        if (respostaSelecionada) {
             acertos++;
         }
 
         respostaSelecionada = null;
         perguntaIndex++;
+        carregarPergunta();
+    }
 
-        if (perguntaIndex >= 1) {
-            localStorage.setItem('acertos', acertos);
-            window.location.href = 'resultado.html';
-        } else {
-            carregarPergunta();
+    function confirmarSaida() {
+        const confirmacao = confirm('Você realmente deseja sair do quiz?');
+        if (confirmacao) {
+            window.location.href = '../index.html';  
         }
     }
 
-    botaoProximo.addEventListener('click', avancar);
-    carregarPergunta();
+    fetch('perguntas.json')
+        .then(response => response.json())
+        .then(data => {
+            perguntas = data.perguntas; 
+            carregarPergunta();
+        })
+        .catch(error => console.error('Erro ao carregar perguntas:', error));
 
-   
+    botaoProximo.addEventListener('click', avancar);
+    botaoFechar.addEventListener('click', confirmarSaida);
+
     window.addEventListener('beforeunload', (event) => {
         if (respostaSelecionada !== null || perguntaIndex > 0) {
             event.preventDefault();
-            event.returnValue = ''; 
+            event.returnValue = '';
         }
     });
 });

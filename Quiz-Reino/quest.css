@@ -103,3 +103,6 @@ body {
 .next-button:hover {
     background-color: #16A085;
 }
+.answer.selecionada {
+    background-color: #1ABC9C;
+}

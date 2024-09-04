@@ -104,3 +104,8 @@ body {
 .next-button:hover {
     background-color: #337ACC;
 }
+
+.option-button.selecionada {
+    background-color: #3A9CFF; 
+    border: 2px solid #1E2673; 
+}

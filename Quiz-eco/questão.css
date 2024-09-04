@@ -56,10 +56,17 @@ body {
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .resposta:hover {
   background-color: #155923;
+}
+
+/* Adicionando o estilo para a opção selecionada */
+.resposta.selecionada {
+  background-color: #1abc9c;
+  border: 2px solid #0b3d0d;
 }
 
 .barra-progresso {
