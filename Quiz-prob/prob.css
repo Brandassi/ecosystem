@@ -57,6 +57,7 @@ body {
     color: white;
     font-size: 30px;
     cursor: pointer;
+    text-decoration: none; 
 }
 
 .quiz-content {
@@ -93,12 +94,12 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100px;
-    text-decoration: none;
 }
 
 .arrow {
     font-size: 50px;
     color: white;
+    text-decoration: none; 
 }
 
 .arrow:hover {

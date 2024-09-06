@@ -70,16 +70,16 @@ body {
 }
 
 .retry-button {
-    background-color: #27518F;
+    background-color: #00011C;
 }
 
 .retry-button:hover {
-    background-color: #27518F;
+    background-color: #2980B9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .retry-again-button {
-    background-color: #3498DB;
+    background-color: #00011C;
 }
 
 .retry-again-button:hover {

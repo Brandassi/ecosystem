@@ -85,10 +85,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     carregarPergunta();
 
-    window.addEventListener('beforeunload', (event) => {
-        if (respostaSelecionada !== null || perguntaIndex > 0) {
-            event.preventDefault();
-            event.returnValue = '';
-        }
-    });
+    window.removeEventListener('beforeunload', () => {});
 });
