@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const botaoProximo = document.getElementById("botao-proximo");
   const botaoFechar = document.querySelector(".botao-fechar");
   const progresso = document.querySelector(".progresso");
-  
+
   let respostaSelecionada = null;
   let perguntaIndex = 0;
   let acertos = 0;
@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function carregarPergunta() {
     if (perguntaIndex >= perguntas.length) {
       localStorage.setItem("acertos", acertos);
+
+      
+      window.onbeforeunload = null;
+
       window.location.href = "resultado.html";
       return;
     }
@@ -57,11 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function confirmarSaida() {
     const confirmacao = confirm("Você realmente deseja sair do quiz?");
     if (confirmacao) {
-      window.location.href = "index.htm";
+      window.location.href = "../index.html"; 
     }
   }
 
- 
   fetch("perguntas.json")
     .then((response) => response.json())
     .then((data) => {
@@ -73,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
   botaoProximo.addEventListener("click", avancar);
   botaoFechar.addEventListener("click", confirmarSaida);
 
-  
   window.onbeforeunload = function () {
     return "Tem certeza que deseja sair do quiz?";
   };

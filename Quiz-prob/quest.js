@@ -8,10 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let perguntaIndex = 0;
     let acertos = 0;
     let perguntas = [];
+    let indoParaResultados = false;
 
     function carregarPergunta() {
         if (perguntaIndex >= perguntas.length) {
             localStorage.setItem('acertos', acertos);
+            indoParaResultados = true;
             window.location.href = 'resultado.html';
             return;
         }
@@ -63,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('perguntas.json')
         .then(response => response.json())
         .then(data => {
-            perguntas = data.perguntas; 
+            perguntas = data; 
             carregarPergunta();
         })
         .catch(error => console.error('Erro ao carregar perguntas:', error));
@@ -72,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     botaoFechar.addEventListener('click', confirmarSaida);
 
     window.addEventListener('beforeunload', (event) => {
-        if (respostaSelecionada !== null || perguntaIndex > 0) {
+        if (!indoParaResultados && (respostaSelecionada !== null || perguntaIndex > 0)) {
             event.preventDefault();
             event.returnValue = '';
         }
