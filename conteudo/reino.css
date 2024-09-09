@@ -92,6 +92,23 @@ header .fechar:focus {
 
 .secao {
   margin-bottom: 20px;
+  
+}
+.texto-completo {
+  font-size: 1.2em; 
+  line-height: 1.6; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.texto-completo br {
+  content: "\00a0"; 
+}
+
+.texto-completo br + br {
+  content: "\00a0"; 
+  display: block;
+  margin: 10px 0; 
 }
 
 .secao .imagem {
@@ -112,6 +129,7 @@ header .fechar:focus {
   line-height: 1.6;
   color: #ffffff;
   font-size: 16px;
+  
 }
 
 .quiz-secao {
