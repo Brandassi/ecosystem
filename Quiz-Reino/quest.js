@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let perguntaIndex = 0;
     let acertos = 0;
     let perguntas = [];
+    let mostrandoResultado = false;
     let indoParaResultados = false;
 
     function carregarPergunta() {
@@ -21,23 +22,50 @@ document.addEventListener('DOMContentLoaded', () => {
         const pergunta = perguntas[perguntaIndex];
         perguntaTitulo.textContent = pergunta.questao;
         listaRespostas.innerHTML = '';
+        respostaSelecionada = null;
+        mostrandoResultado = false;
 
         pergunta.respostas.forEach((opcao, index) => {
             const li = document.createElement('li');
             li.className = 'answer';
             li.textContent = opcao;
-            li.addEventListener('click', () => selecionarResposta(li, index === pergunta.resposta_certa));
+            li.addEventListener('click', () => selecionarResposta(li, index));
             listaRespostas.appendChild(li);
         });
 
         progresso.style.width = `${((perguntaIndex + 1) / perguntas.length) * 100}%`;
     }
 
-    function selecionarResposta(elemento, estaCorreta) {
+    function selecionarResposta(elemento, index) {
         const respostas = document.querySelectorAll('.answer');
         respostas.forEach(resposta => resposta.classList.remove('selecionada'));
+
+        // Marca a resposta selecionada
         elemento.classList.add('selecionada');
-        respostaSelecionada = estaCorreta;
+        respostaSelecionada = index;
+
+        // Libera o botão "Próximo" após a seleção
+        botaoProximo.disabled = false;
+    }
+
+    function mostrarResultado(respostaCertaIndex) {
+        const respostas = document.querySelectorAll('.answer');
+
+        respostas.forEach((resposta, index) => {
+            resposta.classList.remove('selecionada');
+            if (index === respostaCertaIndex) {
+                resposta.classList.add('correta'); // Marca a resposta correta
+            } else if (index === respostaSelecionada) {
+                resposta.classList.add('incorreta'); // Marca a resposta errada, se errada
+            }
+        });
+
+        // Bloqueia as respostas para evitar nova interação
+        respostas.forEach(resposta => {
+            resposta.style.pointerEvents = 'none';
+        });
+
+        mostrandoResultado = true;
     }
 
     function avancar() {
@@ -46,13 +74,22 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (respostaSelecionada) {
-            acertos++;
-        }
+        if (!mostrandoResultado) {
+            // Mostra se a resposta está correta ou errada
+            const pergunta = perguntas[perguntaIndex];
+            mostrarResultado(pergunta.resposta_certa);
+            if (respostaSelecionada === pergunta.resposta_certa) {
+                acertos++;
+            }
 
-        respostaSelecionada = null;
-        perguntaIndex++;
-        carregarPergunta();
+            // Espera de 1 segundo antes de ir para a próxima pergunta
+            setTimeout(() => {
+                perguntaIndex++;
+                carregarPergunta();
+            }, 1000); // 1000 ms = 1 segundo
+
+            return;
+        }
     }
 
     function confirmarSaida() {
@@ -64,19 +101,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Adicione logs para depuração
-    console.log('Iniciando carregamento de perguntas...');
-
+    // Carregando as perguntas do JSON
     fetch('perguntas.json')
         .then(response => {
-            console.log('Resposta recebida:', response);
             if (!response.ok) {
-                throw new Error('Rede não está respondendo corretamente');
+                throw new Error('Erro na rede ao tentar carregar perguntas.');
             }
             return response.json();
         })
         .then(data => {
-            console.log('Dados JSON recebidos:', data);
             perguntas = data.perguntas;
             carregarPergunta();
         })

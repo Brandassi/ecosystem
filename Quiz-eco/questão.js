@@ -13,10 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function carregarPergunta() {
     if (perguntaIndex >= perguntas.length) {
       localStorage.setItem("acertos", acertos);
-
-      
       window.onbeforeunload = null;
-
       window.location.href = "resultado.html";
       return;
     }
@@ -40,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const respostas = document.querySelectorAll(".resposta");
     respostas.forEach((resposta) => resposta.classList.remove("selecionada"));
     elemento.classList.add("selecionada");
-    respostaSelecionada = estaCorreta;
+    respostaSelecionada = { elemento, estaCorreta };
   }
 
   function avancar() {
@@ -49,13 +46,25 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (respostaSelecionada) {
+    const { elemento, estaCorreta } = respostaSelecionada;
+
+    if (estaCorreta) {
       acertos++;
+      elemento.classList.add("correta");
+    } else {
+      elemento.classList.add("errada");
+      // Mostrar qual é a resposta correta
+      const respostas = document.querySelectorAll(".resposta");
+      respostas[perguntas[perguntaIndex].correctOption].classList.add("correta");
     }
 
     respostaSelecionada = null;
-    perguntaIndex++;
-    carregarPergunta();
+
+    // Aguardar 1 segundo antes de avançar
+    setTimeout(() => {
+      perguntaIndex++;
+      carregarPergunta();
+    }, 1000);
   }
 
   function confirmarSaida() {

@@ -106,3 +106,13 @@ body {
 .answer.selecionada {
     background-color: #1ABC9C;
 }
+
+.answer.correta {
+    background-color: #4CAF50; /* Verde para a resposta correta */
+    color: white;
+}
+
+.answer.incorreta {
+    background-color: #E74C3C; /* Vermelho para a resposta incorreta */
+    color: white;
+}

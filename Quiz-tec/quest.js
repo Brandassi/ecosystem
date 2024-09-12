@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let perguntaIndex = 0;
     let acertos = 0;
     let perguntas = [];
+    let respostaClicada = null;
 
     function carregarPergunta() {
         fetch('perguntas.json')
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const botao = document.createElement('button');
             botao.classList.add('option-button');
             botao.textContent = opcao;
-            botao.onclick = () => selecionarResposta(botao, index === perguntaAtual.correctOption);
+            botao.onclick = () => selecionarResposta(botao, index, perguntaAtual.correctOption);
             opcoesContainer.appendChild(botao);
         });
 
@@ -45,11 +46,24 @@ document.addEventListener('DOMContentLoaded', () => {
         progressoPreencher.style.width = `${larguraProgresso}%`;
     }
 
-    function selecionarResposta(botaoSelecionado, estaCorreta) {
+    function selecionarResposta(botaoSelecionado, index, correctOption) {
         const botoesOpcoes = document.querySelectorAll('.option-button');
         botoesOpcoes.forEach(botao => botao.classList.remove('selecionada'));
         botaoSelecionado.classList.add('selecionada');
-        respostaSelecionada = estaCorreta;
+        respostaSelecionada = index;
+        respostaClicada = botaoSelecionado;
+    }
+
+    function destacarRespostas(correctOption) {
+        const botoesOpcoes = document.querySelectorAll('.option-button');
+        botoesOpcoes.forEach((botao, index) => {
+            if (index === correctOption) {
+                botao.style.backgroundColor = 'green'; // Resposta correta
+            } else if (index === respostaSelecionada && respostaSelecionada !== correctOption) {
+                botao.style.backgroundColor = 'red'; // Resposta errada
+            }
+            botao.disabled = true; // Desabilita os botões após a seleção
+        });
     }
 
     function avancar() {
@@ -58,19 +72,24 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (respostaSelecionada) {
+        const perguntaAtual = perguntas[perguntaIndex];
+        destacarRespostas(perguntaAtual.correctOption);
+
+        if (respostaSelecionada === perguntaAtual.correctOption) {
             acertos++;
         }
 
-        respostaSelecionada = null;
-        perguntaIndex++;
+        setTimeout(() => {
+            respostaSelecionada = null;
+            perguntaIndex++;
 
-        if (perguntaIndex >= perguntas.length) {
-            localStorage.setItem('acertos', acertos);
-            window.location.href = 'resultado.html';
-        } else {
-            exibirPergunta();
-        }
+            if (perguntaIndex >= perguntas.length) {
+                localStorage.setItem('acertos', acertos);
+                window.location.href = 'resultado.html';
+            } else {
+                exibirPergunta();
+            }
+        }, 1000); // Espera 1 segundo antes de avançar
     }
 
     function confirmarSaida() {
@@ -84,6 +103,4 @@ document.addEventListener('DOMContentLoaded', () => {
     botaoFechar.addEventListener('click', confirmarSaida);
 
     carregarPergunta();
-
-    window.removeEventListener('beforeunload', () => {});
 });

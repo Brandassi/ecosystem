@@ -103,3 +103,15 @@ body {
 .botao-proximo:hover {
   background-color: #16a085;
 }
+
+/* Resposta correta (verde) */
+.resposta.correta {
+  background-color: #2ecc71;
+  border: 2px solid #27ae60;
+}
+
+/* Resposta errada (vermelho) */
+.resposta.errada {
+  background-color: #e74c3c;
+  border: 2px solid #c0392b;
+}

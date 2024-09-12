@@ -104,3 +104,12 @@ body {
 .resposta.selecionada {
     background-color: #1ABC9C; 
 }
+.resposta.correta {
+    background-color: #2ECC71; /* Verde para resposta correta */
+    color: #ffffff;
+}
+
+.resposta.incorreta {
+    background-color: #E74C3C; /* Vermelho para resposta incorreta */
+    color: #ffffff;
+}
