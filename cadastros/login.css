@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #E6E6E6;
+}
+
+.container {
+    text-align: center;
+    width: 400px;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.header h1 {
+    font-size: 55px;
+    color: #0C100D;
+}
+
+.close-btn {
+    position: fixed;
+    top: 20px; /* Abaixo do topo da tela */
+    right: 20px; /* Um pouco afastado da borda direita */
+    font-size: 48px;
+    font-weight: bold;
+    color: #357a38;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.close-btn:hover {
+    color: #0C100D;
+}
+
+
+.login-box {
+    background-color: #A2BE97;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #357a38;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+.avatar img {
+    width: 50px;
+    height: 50px;
+    filter: invert(1); /* Isso deixa o avatar branco */
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: #87AD78;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 8px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.icon img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1); /* Isso deixa os ícones brancos */
+}
+
+input[type="email"],
+input[type="password"] {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    color: #fff;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #357a38;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #2d6430;
+}
+
+.create-account {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.create-account a {
+    color: #357a38;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.create-account a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
