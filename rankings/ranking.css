@@ -1,0 +1,114 @@
+/* Configuração global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Fundo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('fundo-rank.png'); /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Container do ranking */
+.ranking-container {
+    position: relative;
+    text-align: center;
+    width: 500px;
+    padding: 20px;
+}
+
+/* Botão de fechar */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.close-btn:hover {
+    color: #ccc;
+}
+
+/* Caixa principal do ranking */
+.ranking-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Transparência para o fundo */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.ranking-box h2 {
+    font-size: 36px;
+    color: #0C100D;
+    margin-bottom: 20px;
+}
+
+/* Estilo da lista de ranking */
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rank-item {
+    display: flex;
+    align-items: center;
+    background-color: #87AD78;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Imagem da medalha */
+.medal {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Avatar circular com letra inicial */
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #4CAF50; /* Cor de fundo do avatar */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Nome e pontuação */
+.name {
+    flex: 1;
+    color: #fff;
+}
+
+.score {
+    color: #fff;
+}
+
+/* Número da posição (4 e 5) */
+.rank-number {
+    font-weight: bold;
+    color: #fff;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+}
