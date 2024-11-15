@@ -21,8 +21,9 @@ body {
 .ranking-container {
     position: relative;
     text-align: center;
-    width: 500px;
-    padding: 20px;
+    height: 700px; /* Aumentado para maior espaço vertical */
+    width: 1000px; /* Aumentado para maior espaço horizontal */
+    padding: 40px; /* Aumentado para mais espaçamento interno */
 }
 
 /* Botão de fechar */
@@ -30,14 +31,14 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 32px;
+    font-size: 40px; /* Botão maior */
     font-weight: bold;
     color: #fff;
     background-color: transparent;
     border: none;
     cursor: pointer;
     text-decoration: none;
-    padding: 10px;
+    padding: 15px;
 }
 
 .close-btn:hover {
@@ -47,68 +48,71 @@ body {
 /* Caixa principal do ranking */
 .ranking-box {
     background-color: rgba(255, 255, 255, 0.9); /* Transparência para o fundo */
-    padding: 20px;
-    border-radius: 10px;
+    padding: 40px; /* Aumentado para mais espaço interno */
+    border-radius: 15px; /* Bordas ligeiramente mais arredondadas */
 }
 
 .ranking-box h2 {
-    font-size: 36px;
+    font-size: 48px; /* Texto maior */
     color: #0C100D;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Maior espaço abaixo do título */
 }
 
 /* Estilo da lista de ranking */
 .ranking-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px; /* Aumentado o espaçamento entre os itens */
 }
 
 .rank-item {
     display: flex;
     align-items: center;
     background-color: #87AD78;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 20px; /* Mais espaço interno */
+    border-radius: 12px; /* Bordas mais arredondadas */
     position: relative;
 }
 
 /* Imagem da medalha */
 .medal {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 50px; /* Medalhas maiores */
+    height: 50px;
+    margin-right: 15px; /* Maior espaço entre medalha e avatar */
 }
 
 /* Avatar circular com letra inicial */
 .avatar {
-    width: 40px;
-    height: 40px;
+    width: 60px; /* Avatares maiores */
+    height: 60px;
     background-color: #4CAF50; /* Cor de fundo do avatar */
     color: white;
-    font-size: 20px;
+    font-size: 28px; /* Texto maior no avatar */
     font-weight: bold;
     text-align: center;
-    line-height: 40px;
+    line-height: 60px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 15px; /* Maior espaço entre avatar e nome */
 }
 
 /* Nome e pontuação */
 .name {
     flex: 1;
     color: #fff;
+    font-size: 24px; /* Texto maior nos nomes */
 }
 
 .score {
     color: #fff;
+    font-size: 24px; /* Texto maior nas pontuações */
 }
 
 /* Número da posição (4 e 5) */
 .rank-number {
     font-weight: bold;
     color: #fff;
-    width: 30px;
+    width: 40px; /* Ligeiramente maior para combinar com o restante */
     text-align: center;
-    margin-right: 10px;
+    margin-right: 15px; /* Maior espaço entre o número e os outros elementos */
+    font-size: 24px; /* Texto maior no número */
 }

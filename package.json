@@ -7,5 +7,15 @@
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.11.4",
     "nodemon": "^3.1.7"
-  }
+  },
+  "name": "ecosystem-2",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

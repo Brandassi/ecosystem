@@ -6,25 +6,32 @@
     <title>ECOSYSTEM Login</title>
     <script src="login.js" defer></script>
     <link rel="stylesheet" href="login.css">
+    <link
+      rel="shortcut icon"
+      href="../imagens/favicon.ico"
+      type="image/x-icon"
+    />
 </head>
 <body>
     <a href="../index.html" class="close-btn">&times;</a> <!-- Botão "X" para voltar à home -->
     <div class="container">
         <div class="header">
-            <img src="../logo.png" alt="Logo Ecosystem" class="logo">
-            <h1>ECOSYSTEM</h1>
+            <div class="logo-container">
+                <img src="../logo.png" alt="Logo Ecosystem" class="logo">
+                <h1>ECOSYSTEM</h1>
+            </div>
         </div>
         <div class="login-box">
             <div class="avatar">
-                <img src="https://img.icons8.com/ios-filled/50/FFFFFF/user-male-circle.png" alt="Avatar"> <!-- Avatar Branco -->
+                <img src="pessoa.png" alt="Avatar">
             </div>
             <form>
                 <div class="input-group">
-                    <span class="icon"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/email.png"/></span> <!-- Ícone de Email Branco -->
+                    <span class="icon"><img src="email.png" alt="Ícone Email"></span>
                     <input type="email" placeholder="Email" required>
                 </div>
                 <div class="input-group">
-                    <span class="icon"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/lock.png"/></span> <!-- Ícone de Cadeado Branco -->
+                    <span class="icon"><img src="senha.png" alt="Ícone Senha"></span>
                     <input type="password" placeholder="Senha" required>
                 </div>
                 <button type="submit" class="login-btn">Login</button>

@@ -1,19 +1,18 @@
 // Função para validar o formulário de cadastro
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
-    const emailInput = document.querySelector("input[type='email']");
-    const passwordInput = document.querySelector("input[type='password']");
-    const confirmPasswordInput = document.querySelectorAll("input[type='password']")[1];
+    const form = document.querySelector("#registerForm"); // Formulário de cadastro
+    const usernameInput = document.querySelector("#registerUsername"); // Campo de nome de usuário
+    const passwordInput = document.querySelector("#registerPassword"); // Campo de senha
+    const confirmPasswordInput = document.querySelector("#registerConfirmPassword"); // Campo de confirmação de senha
 
-    // Função para validar email
-    function isValidEmail(email) {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailPattern.test(email);
+    // Função para validar o nome de usuário (exemplo de validação simples)
+    function isValidUsername(username) {
+        return username.length >= 3; // Exemplo de validação: pelo menos 3 caracteres
     }
 
-    // Função para validar senha
+    // Função para validar senha (exemplo de validação simples)
     function isPasswordStrong(password) {
-        return password.length >= 6; // Exemplo de validação: ao menos 6 caracteres
+        return password.length >= 6; // Exemplo de validação: pelo menos 6 caracteres
     }
 
     // Função para exibir alerta e cancelar envio do formulário
@@ -22,16 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Evento de envio do formulário
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", async function (event) {
         event.preventDefault(); // Impede o envio do formulário para fazer validações
 
-        const email = emailInput.value.trim();
+        const username = usernameInput.value.trim();
         const password = passwordInput.value.trim();
         const confirmPassword = confirmPasswordInput.value.trim();
 
-        // Validação do campo de email
-        if (!isValidEmail(email)) {
-            showAlert("Por favor, insira um email válido.");
+        // Validação do nome de usuário
+        if (!isValidUsername(username)) {
+            showAlert("O nome de usuário deve ter pelo menos 3 caracteres.");
             return;
         }
 
@@ -47,10 +46,28 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Se todas as validações passarem, enviar os dados (simulado)
-        showAlert("Cadastro realizado com sucesso!");
-        form.reset(); // Limpa o formulário após o envio bem-sucedido
+        // Se todas as validações passarem, enviar os dados para a API
+        try {
+            // Fazendo a requisição POST para a API de cadastro
+            const response = await fetch("http://localhost:3000/api/register", {
+                method: "POST", // Método HTTP para envio de dados
+                headers: { "Content-Type": "application/json" }, // Cabeçalho indicando que os dados são em JSON
+                body: JSON.stringify({ username, password }) // Envia os dados no formato JSON
+            });
 
-        // Aqui você pode adicionar código para enviar os dados ao servidor usando fetch ou XMLHttpRequest
+            // Verifica se a resposta da API é bem-sucedida (status HTTP 200 ou 201)
+            if (response.ok) {
+                showAlert("Cadastro realizado com sucesso!");
+                window.location.href = "index.html"; // Redireciona para a página de login
+            } else {
+                // Se a resposta for erro, mostra a mensagem de erro da API
+                const data = await response.json();
+                showAlert(data.message); // Exibe a mensagem de erro da resposta
+            }
+        } catch (error) {
+            // Caso ocorra um erro na requisição
+            console.error("Erro:", error);
+            showAlert("Erro ao realizar o cadastro. Tente novamente.");
+        }
     });
 });

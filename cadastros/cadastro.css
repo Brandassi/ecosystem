@@ -15,7 +15,7 @@ body {
 
 .container {
     text-align: center;
-    width: 400px;
+    width: 500px; /* Aumenta a largura */
     position: relative;
 }
 
@@ -23,26 +23,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 10px;
+    margin-bottom: 20px; /* Espaço abaixo do cabeçalho */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre logo e texto */
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
+    width: 80px; /* Aumenta o tamanho da logo */
+    height: 80px;
 }
 
 .header h1 {
-    font-size: 45px;
+    font-size: 50px; /* Texto maior */
     color: #0C100D;
 }
 
-
-
 .close-btn {
     position: fixed;
-    top: 20px; /* Abaixo do topo da tela */
-    right: 20px; /* Um pouco afastado da borda direita */
+    top: 20px;
+    right: 20px;
     font-size: 48px;
     font-weight: bold;
     color: #357a38;
@@ -59,9 +62,9 @@ body {
 
 .register-box {
     background-color: #A2BE97;
-    padding: 20px;
+    padding: 30px; /* Aumenta o espaço interno */
     border-radius: 10px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .avatar {
@@ -69,15 +72,15 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #357a38;
-    width: 70px;
-    height: 70px;
+    width: 100px; /* Avatar maior */
+    height: 100px;
     border-radius: 50%;
-    margin: 0 auto 15px;
+    margin: 0 auto 20px;
 }
 
 .avatar img {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     filter: invert(1); /* Deixa o avatar branco */
 }
 
@@ -86,20 +89,20 @@ body {
     align-items: center;
     background-color: #87AD78;
     border-radius: 5px;
-    margin-bottom: 15px;
-    padding: 8px;
+    margin-bottom: 20px; /* Espaço maior entre os campos */
+    padding: 12px;
 }
 
 .icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 8px; /* Mais espaço para o ícone */
 }
 
 .icon img {
-    width: 20px;
-    height: 20px;
+    width: 30px; /* Ícones maiores */
+    height: 30px;
     filter: invert(1); /* Deixa os ícones brancos */
 }
 
@@ -111,6 +114,7 @@ input[type="password"] {
     background: transparent;
     width: 100%;
     color: #fff;
+    font-size: 18px; /* Texto maior nos inputs */
 }
 
 .register-btn {
@@ -119,8 +123,8 @@ input[type="password"] {
     color: white;
     border: none;
     border-radius: 25px;
-    padding: 12px;
-    font-size: 16px;
+    padding: 15px; /* Botão maior */
+    font-size: 18px; /* Texto maior no botão */
     cursor: pointer;
 }
 
