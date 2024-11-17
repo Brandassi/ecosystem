@@ -65,6 +65,22 @@ nav a:hover {
   color: #b2ff59;
 }
 
+/* Botão de login no estilo dos demais botões */
+.btn-login {
+  padding: 10px 15px;
+  background-color: #375409;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #004d00;
+  text-decoration: underline;
+}
+
+
 .main {
   height: 100vh;
   background-image: url("./banner.jpeg");

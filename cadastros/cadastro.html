@@ -25,22 +25,17 @@
             <div class="avatar">
                 <img src="pessoa.png" alt="Avatar">
             </div>
-            <form>
+            <!-- Adicionado o ID 'registerForm' no formulário -->
+            <form id="registerForm">
                 <div class="input-group">
                     <span class="icon"><img src="pessoa.png" alt="Ícone Nome"></span>
-                    <input type="text" placeholder="Nome Completo" required>
-                </div>
-                <div class="input-group">
-                    <span class="icon"><img src="email.png" alt="Ícone Email"></span>
-                    <input type="email" placeholder="Email" required>
+                    <!-- Adicionado o ID 'registerUsername' -->
+                    <input type="text" id="registerUsername" placeholder="Nome Completo" required>
                 </div>
                 <div class="input-group">
                     <span class="icon"><img src="senha.png" alt="Ícone Senha"></span>
-                    <input type="password" placeholder="Senha" required>
-                </div>
-                <div class="input-group">
-                    <span class="icon"><img src="senha.png" alt="Ícone Confirmação de Senha"></span>
-                    <input type="password" placeholder="Confirmação da Senha" required>
+                    <!-- Adicionado o ID 'registerPassword' -->
+                    <input type="password" id="registerPassword" placeholder="Senha" required>
                 </div>
                 <button type="submit" class="register-btn">Cadastrar</button>
             </form>
