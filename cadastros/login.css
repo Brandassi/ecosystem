@@ -106,7 +106,7 @@ body {
     filter: invert(1); /* Deixa os ícones brancos */
 }
 
-input[type="email"],
+input[type="text"],
 input[type="password"] {
     border: none;
     outline: none;

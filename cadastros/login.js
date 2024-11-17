@@ -19,13 +19,18 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
         if (response.ok) {
             // Converte a resposta para JSON para acessar o token gerado
             const data = await response.json();
+            
             // Armazena o token de autenticação no localStorage para acessos futuros
             localStorage.setItem("token", data.token);
-            // Redireciona para a página de boas-vindas após login bem-sucedido
-            window.location.href = "../index.html";
+            
+            // Armazena o nome do usuário também no localStorage (para não pedir login novamente em outras páginas)
+            localStorage.setItem("usuarioLogado", JSON.stringify({ nome: username }));
+            
+            // Redireciona para a página inicial (index.html)
+            window.location.href = "../index.html"; // Ajuste o caminho conforme sua estrutura
         } else {
             // Se o login falhar, exibe uma mensagem de erro para o usuário
-            alert("Login falhou!");
+            alert("Login falhou! Verifique seu usuário ou senha.");
         }
     } catch (error) {
         // Caso ocorra um erro na requisição, exibe o erro no console para análise

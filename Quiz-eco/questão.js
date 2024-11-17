@@ -10,11 +10,32 @@ document.addEventListener("DOMContentLoaded", () => {
   let acertos = 0;
   let perguntas = [];
 
+  // Simula o usuário logado - Substituir com verificação real
+  const usuarioLogado = localStorage.getItem("usuarioLogado");
+
+  // Verifica se o usuário está logado
+  if (!usuarioLogado) {
+    alert("Por favor, faça login para acessar o quiz.");
+    window.location.href = "../login.html";
+    return;
+  }
+
+  // Função para carregar as perguntas
   function carregarPergunta() {
     if (perguntaIndex >= perguntas.length) {
+      // Salva os acertos no localStorage
+      const usuario = localStorage.getItem("usuarioLogado");
+      const acertosAntigos = JSON.parse(localStorage.getItem("ranking")) || [];
+      acertosAntigos.push({ usuario, acertos });
+      // Ordena o ranking em ordem decrescente de acertos
+      acertosAntigos.sort((a, b) => b.acertos - a.acertos);
+      // Armazena o novo ranking
+      localStorage.setItem("ranking", JSON.stringify(acertosAntigos));
+
+      // Redireciona para a tela de resultados
       localStorage.setItem("acertos", acertos);
       window.onbeforeunload = null;
-      window.location.href = "resultado.html";
+      window.location.href = "resultado.html"; // Encaminha para a tela de resultados
       return;
     }
 
@@ -33,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progresso.style.width = `${((perguntaIndex + 1) / perguntas.length) * 100}%`;
   }
 
+  // Selecionar resposta
   function selecionarResposta(elemento, estaCorreta) {
     const respostas = document.querySelectorAll(".resposta");
     respostas.forEach((resposta) => resposta.classList.remove("selecionada"));
@@ -40,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     respostaSelecionada = { elemento, estaCorreta };
   }
 
+  // Avançar para a próxima pergunta
   function avancar() {
     if (respostaSelecionada === null) {
       alert("Por favor, selecione uma resposta.");
@@ -53,27 +76,27 @@ document.addEventListener("DOMContentLoaded", () => {
       elemento.classList.add("correta");
     } else {
       elemento.classList.add("errada");
-      // Mostrar qual é a resposta correta
       const respostas = document.querySelectorAll(".resposta");
       respostas[perguntas[perguntaIndex].correctOption].classList.add("correta");
     }
 
     respostaSelecionada = null;
 
-    // Aguardar 1 segundo antes de avançar
     setTimeout(() => {
       perguntaIndex++;
       carregarPergunta();
     }, 1000);
   }
 
+  // Sair do quiz
   function confirmarSaida() {
     const confirmacao = confirm("Você realmente deseja sair do quiz?");
     if (confirmacao) {
-      window.location.href = "../index.html"; 
+      window.location.href = "../index.html";
     }
   }
 
+  // Carregar perguntas de um arquivo JSON
   fetch("perguntas.json")
     .then((response) => response.json())
     .then((data) => {

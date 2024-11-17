@@ -12,6 +12,36 @@ body {
   background-color: #001100;
 }
 
+.login-message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(255, 69, 0, 0.8); /* Fundo semi-transparente */
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 1.5s ease-out;
+  display: block;
+}
+
+.login-message.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .quiz-container {
   height: 100vh;
   background-image: url("../imagens/cont-eco.jpg");
