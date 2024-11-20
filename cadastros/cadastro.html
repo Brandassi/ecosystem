@@ -6,14 +6,10 @@
     <title>ECOSYSTEM Cadastro</title>
     <script src="cadastro.js" defer></script>
     <link rel="stylesheet" href="cadastro.css">
-    <link
-      rel="shortcut icon"
-      href="../imagens/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-    <a href="../index.html" class="close-btn">&times;</a> <!-- Botão "X" para voltar à home -->
+    <a href="../index.html" class="close-btn">&times;</a>
     <div class="container">
         <div class="header">
             <div class="logo-container">
@@ -25,20 +21,19 @@
             <div class="avatar">
                 <img src="pessoa.png" alt="Avatar">
             </div>
-            <!-- Adicionado o ID 'registerForm' no formulário -->
             <form id="registerForm">
                 <div class="input-group">
                     <span class="icon"><img src="pessoa.png" alt="Ícone Nome"></span>
-                    <!-- Adicionado o ID 'registerUsername' -->
                     <input type="text" id="registerUsername" placeholder="Nome Completo" required>
                 </div>
                 <div class="input-group">
                     <span class="icon"><img src="senha.png" alt="Ícone Senha"></span>
-                    <!-- Adicionado o ID 'registerPassword' -->
                     <input type="password" id="registerPassword" placeholder="Senha" required>
                 </div>
                 <button type="submit" class="register-btn">Cadastrar</button>
             </form>
+            <!-- Adicionando a div para mostrar mensagens de erro ou sucesso -->
+            <div id="feedbackMessage" class="feedback-message"></div>
         </div>
     </div>
 </body>

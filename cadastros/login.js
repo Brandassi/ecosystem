@@ -2,38 +2,40 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     // Impede o comportamento padrão de recarregar a página ao enviar o formulário
     e.preventDefault();
 
-    // Obtém o valor do campo de entrada de nome de usuário
-    const username = document.getElementById("username").value;
-    // Obtém o valor do campo de entrada de senha
+    // Obtém os valores dos campos de entrada
+    const username = document.getElementById("usuario").value;
     const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("errorMessage"); // Elemento para exibir erros
+
+    // Limpa mensagens de erro anteriores
+    errorMessage.textContent = "";
 
     try {
         // Faz uma requisição POST para o endpoint de login na API
         const response = await fetch("http://localhost:3000/api/login", {
-            method: "POST", // Define o método HTTP como POST
-            headers: { "Content-Type": "application/json" }, // Define o cabeçalho do tipo de conteúdo como JSON
-            body: JSON.stringify({ username, password }) // Converte os dados do usuário para JSON e os inclui no corpo da requisição
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
         });
 
-        // Verifica se a resposta da API indica sucesso (status HTTP 200)
         if (response.ok) {
-            // Converte a resposta para JSON para acessar o token gerado
+            // Converte a resposta para JSON
             const data = await response.json();
-            
-            // Armazena o token de autenticação no localStorage para acessos futuros
+
+            // Armazena o token e o nome do usuário no localStorage
             localStorage.setItem("token", data.token);
-            
-            // Armazena o nome do usuário também no localStorage (para não pedir login novamente em outras páginas)
-            localStorage.setItem("usuarioLogado", JSON.stringify({ nome: username }));
-            
-            // Redireciona para a página inicial (index.html)
-            window.location.href = "../index.html"; // Ajuste o caminho conforme sua estrutura
+            localStorage.setItem("usuarioLogado", JSON.stringify({ username }));
+
+            // Redireciona para a página inicial
+            window.location.href = "../index.html";
         } else {
-            // Se o login falhar, exibe uma mensagem de erro para o usuário
-            alert("Login falhou! Verifique seu usuário ou senha.");
+            // Exibe a mensagem de erro retornada pela API ou uma mensagem padrão
+            const errorData = await response.json();
+            errorMessage.textContent = errorData.message || "Usuário ou senha incorretos!";
         }
     } catch (error) {
-        // Caso ocorra um erro na requisição, exibe o erro no console para análise
+        // Exibe mensagem de erro genérica no caso de falha no servidor
         console.error("Erro:", error);
+        errorMessage.textContent = "Erro no servidor. Tente novamente mais tarde.";
     }
 });

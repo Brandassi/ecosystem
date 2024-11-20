@@ -65,10 +65,9 @@ nav a:hover {
   color: #b2ff59;
 }
 
-/* Botão de login no estilo dos demais botões */
 .btn-login {
   padding: 10px 15px;
-  background-color: #375409;
+  background-color: #375409; /* Cor inicial */
   color: white;
   border-radius: 5px;
   text-decoration: none;
@@ -76,8 +75,7 @@ nav a:hover {
 }
 
 .btn-login:hover {
-  background-color: #004d00;
-  text-decoration: underline;
+  background-color: #004d00; /* Cor ao passar o mouse */
 }
 
 

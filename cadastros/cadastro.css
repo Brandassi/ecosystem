@@ -131,3 +131,21 @@ input[type="password"] {
 .register-btn:hover {
     background-color: #2d6430;
 }
+
+.feedback-message {
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.error {
+    background-color: #f44336;
+    color: white;
+}

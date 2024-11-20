@@ -2,16 +2,14 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
-const cors = require("cors"); // Importar o cors
+const cors = require("cors");
 const db = require("./database");
 
 const app = express();
 const PORT = 3000;
 const SECRET_KEY = "sua_chave_secreta";
 
-// Configuração do CORS
-app.use(cors()); // Permitir requisições de qualquer origem
-
+app.use(cors());
 app.use(bodyParser.json());
 
 // Rota de cadastro de usuário
@@ -46,7 +44,6 @@ app.post("/api/login", (req, res) => {
         const match = await bcrypt.compare(password, user.password);
 
         if (match) {
-            // Inclua `id` no payload do token JWT
             const token = jwt.sign({ id: user.id, username: user.username }, SECRET_KEY, { expiresIn: "1h" });
             res.json({ token });
         } else {
@@ -62,16 +59,15 @@ function authenticateToken(req, res, next) {
 
     jwt.verify(token, SECRET_KEY, (err, user) => {
         if (err) return res.status(403).json({ message: "Token inválido" });
-        req.user = user;  // O `req.user` agora deve conter `id` e `username`
+        req.user = user;
         next();
     });
 }
 
-// Rota protegida (Bem-vindo)
+// Rota protegida: Bem-vindo
 app.get("/api/welcome", authenticateToken, (req, res) => {
     res.json({ message: `Bem-vindo, ${req.user.username}!` });
 });
-
 
 // Rota para salvar a pontuação
 app.post("/api/save-score", authenticateToken, (req, res) => {
@@ -80,20 +76,23 @@ app.post("/api/save-score", authenticateToken, (req, res) => {
 
     db.query("INSERT INTO scores (user_id, score) VALUES (?, ?)", [userId, score], (err) => {
         if (err) {
-            console.error("Erro ao salvar pontuação:", err);  // Log do erro para diagnóstico
+            console.error("Erro ao salvar pontuação:", err);
             return res.status(500).json({ message: "Erro ao salvar pontuação!" });
         }
         res.status(200).json({ message: "Pontuação salva com sucesso!" });
     });
 });
 
-// Rota para obter o ranking de pontuações
+// Rota para obter o ranking
 app.get("/api/ranking", authenticateToken, (req, res) => {
     const query = `
-        SELECT users.username, scores.score
+        SELECT 
+            DENSE_RANK() OVER (ORDER BY scores.score DESC) AS position,
+            users.username,
+            scores.score
         FROM scores
         JOIN users ON scores.user_id = users.id
-        ORDER BY scores.score DESC;
+        ORDER BY position ASC, scores.score DESC;
     `;
 
     db.query(query, (err, results) => {
