@@ -28,6 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("ranking", JSON.stringify(ranking));
 
     // Redireciona para a página de ranking
-    window.location.href = "ranking.html";
+    window.location.href = "../rankings/ranking.html";
   });
 });

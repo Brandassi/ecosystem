@@ -37,6 +37,23 @@ body {
     cursor: pointer;
 }
 
+/* Adicione ao seu CSS */
+.botao-ranking {
+    background-color: #4CAF50; /* Cor de fundo */
+    color: white;              /* Cor do texto */
+    padding: 10px 20px;        /* Tamanho do botão */
+    text-align: center;        /* Alinha o texto */
+    text-decoration: none;     /* Remove o sublinhado */
+    border-radius: 5px;        /* Bordas arredondadas */
+    margin-top: 10px;          /* Espaço entre os botões */
+    display: inline-block;     /* Exibe os botões lado a lado */
+}
+
+.botao-ranking:hover {
+    background-color: #45a049; /* Cor de fundo quando o mouse passar por cima */
+}
+
+
 .conteudo-resultado h2 {
     font-size: 32px;
     color: white;

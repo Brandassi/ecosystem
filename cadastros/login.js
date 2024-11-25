@@ -22,12 +22,18 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
             // Converte a resposta para JSON
             const data = await response.json();
 
-            // Armazena o token e o nome do usuário no localStorage
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("usuarioLogado", JSON.stringify({ username }));
+            // Verifica se o token existe na resposta
+            if (data.token) {
+                // Armazena o token e o nome do usuário no localStorage
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("usuarioLogado", JSON.stringify({ username }));
 
-            // Redireciona para a página inicial
-            window.location.href = "../index.html";
+                // Redireciona para a página inicial
+                window.location.href = "../index.html";
+            } else {
+                // Caso o token não seja retornado pela API
+                errorMessage.textContent = "Erro ao receber o token de autenticação.";
+            }
         } else {
             // Exibe a mensagem de erro retornada pela API ou uma mensagem padrão
             const errorData = await response.json();

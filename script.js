@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Verifica se o usuário está logado
   const usuarioLogado = localStorage.getItem("usuarioLogado");
+  const token = localStorage.getItem("token");
 
-  if (usuarioLogado) {
+  if (usuarioLogado && token) {
     // Se o usuário estiver logado, exibe o nome no botão
     const usuario = JSON.parse(usuarioLogado); // Recupera o nome do usuário do localStorage
     loginButton.textContent = `Olá, ${usuario.username || "Usuário"}`;

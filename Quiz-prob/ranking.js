@@ -2,8 +2,7 @@ const API_URL = "http://localhost:3000/api/ranking"; // URL da API de ranking
 
 // Função para buscar o ranking do servidor
 async function fetchRanking() {
-    // Recupera o token armazenado no localStorage
-    const TOKEN = localStorage.getItem('token'); // Substitua pelo método de armazenamento do token
+    const TOKEN = localStorage.getItem('token'); // Recupera o token do localStorage
 
     // Verifica se o token existe
     if (!TOKEN) {
@@ -14,7 +13,7 @@ async function fetchRanking() {
     try {
         const response = await fetch(API_URL, {
             headers: {
-                Authorization: `Bearer ${TOKEN}`, // Usa o token recuperado
+                Authorization: `Bearer ${TOKEN}`,
                 "Content-Type": "application/json"
             }
         });
@@ -79,8 +78,45 @@ function renderRanking(data) {
     });
 }
 
-// Inicializa o ranking ao carregar a página
+// Função para enviar os resultados do quiz para a API
+async function enviarResultadoParaRanking(nome, pontos) {
+    const TOKEN = localStorage.getItem('token'); // Recupera o token do localStorage
+
+    if (!TOKEN) {
+        console.error("Token de autenticação não encontrado!");
+        return;
+    }
+
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${TOKEN}`
+            },
+            body: JSON.stringify({ username: nome, score: pontos })
+        });
+
+        if (!response.ok) throw new Error("Erro ao enviar resultado para o ranking");
+        console.log("Resultado salvo com sucesso!");
+    } catch (error) {
+        console.error("Erro ao enviar resultado:", error);
+    }
+}
+
+// Inicializa o ranking e envia o resultado ao carregar a página
 document.addEventListener("DOMContentLoaded", async () => {
+    // Enviar o resultado do quiz
+    const acertos = localStorage.getItem('acertos') || 0;
+    const nomeJogador = localStorage.getItem('nomeJogador') || "Anônimo";
+
+    if (nomeJogador && acertos > 0) {
+        await enviarResultadoParaRanking(nomeJogador, acertos);
+        localStorage.removeItem('acertos');
+        localStorage.removeItem('nomeJogador');
+    }
+
+    // Carregar o ranking
     const ranking = await fetchRanking();
     renderRanking(ranking);
 });
