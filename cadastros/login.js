@@ -28,7 +28,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("usuarioLogado", JSON.stringify({ username }));
 
-                // Redireciona para a página inicial
+                // Redireciona para a página do ranking ou página inicial
                 window.location.href = "../index.html";
             } else {
                 // Caso o token não seja retornado pela API

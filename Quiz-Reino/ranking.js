@@ -1,9 +1,9 @@
+const API_URL = "http://localhost:3000/api/ranking"; // URL da API de ranking
+
 // Função para buscar o ranking do servidor
 async function fetchRanking() {
-    // Recupera o token armazenado no localStorage
-    const TOKEN = localStorage.getItem('token'); // Substitua pelo método de armazenamento do token
+    const TOKEN = localStorage.getItem('token'); // Recupera o token do localStorage
 
-    // Verifica se o token existe
     if (!TOKEN) {
         console.error("Token de autenticação não encontrado!");
         return [];
@@ -12,7 +12,7 @@ async function fetchRanking() {
     try {
         const response = await fetch(API_URL, {
             headers: {
-                Authorization: `Bearer ${TOKEN}`, // Usa o token recuperado
+                Authorization: `Bearer ${TOKEN}`,
                 "Content-Type": "application/json"
             }
         });
@@ -25,7 +25,7 @@ async function fetchRanking() {
             position: player.position, // Posição do ranking vinda da API
             name: player.username,    // Nome do jogador
             score: player.score,      // Pontuação do jogador
-            avatar: "pessoa.png",     // Usa o avatar fixo 'pessoa.png'
+            avatar: `avatar${index + 1}.png`, // Personalização do avatar
             medal: index < 3 ? `medalha${index + 1}.png` : null // Medalha para os 3 primeiros
         }));
     } catch (error) {
@@ -57,32 +57,65 @@ function renderRanking(data) {
             rankItem.appendChild(rankNumber);
         }
 
-        // Adiciona o avatar do jogador (fixo para todos)
         const avatarImg = document.createElement("img");
         avatarImg.src = player.avatar || "default-avatar.png";
         avatarImg.alt = `Avatar de ${player.name}`;
         avatarImg.classList.add("avatar");
         rankItem.appendChild(avatarImg);
 
-        // Adiciona o nome do jogador
         const nameSpan = document.createElement("span");
         nameSpan.classList.add("name");
         nameSpan.textContent = player.name;
         rankItem.appendChild(nameSpan);
 
-        // Adiciona a pontuação do jogador
         const scoreSpan = document.createElement("span");
         scoreSpan.classList.add("score");
         scoreSpan.textContent = player.score;
         rankItem.appendChild(scoreSpan);
 
-        // Adiciona o item do ranking na lista
         rankingList.appendChild(rankItem);
     });
 }
 
-// Inicializa o ranking ao carregar a página
+// Função para enviar os resultados do quiz para a API
+async function enviarResultadoParaRanking(nome, pontos) {
+    const TOKEN = localStorage.getItem('token'); // Recupera o token do localStorage
+
+    if (!TOKEN) {
+        console.error("Token de autenticação não encontrado!");
+        return;
+    }
+
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${TOKEN}`
+            },
+            body: JSON.stringify({ username: nome, score: pontos })
+        });
+
+        if (!response.ok) throw new Error("Erro ao enviar resultado para o ranking");
+        console.log("Resultado salvo com sucesso!");
+    } catch (error) {
+        console.error("Erro ao enviar resultado:", error);
+    }
+}
+
+// Inicializa o ranking e envia o resultado ao carregar a página
 document.addEventListener("DOMContentLoaded", async () => {
+    const acertos = localStorage.getItem('acertos') || 0;
+    const nomeJogador = localStorage.getItem('nomeJogador') || "Anônimo";
+
+    // Enviar o resultado do quiz para o servidor se houver acertos
+    if (nomeJogador && acertos > 0) {
+        await enviarResultadoParaRanking(nomeJogador, acertos);
+        localStorage.removeItem('acertos');
+        localStorage.removeItem('nomeJogador');
+    }
+
+    // Carregar o ranking do servidor e renderizá-lo
     const ranking = await fetchRanking();
     renderRanking(ranking);
 });

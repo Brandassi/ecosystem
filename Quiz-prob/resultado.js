@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Função para enviar os resultados do quiz para a API
 async function enviarResultadoParaRanking(nome, pontos) {
-    const API_URL = "http://localhost:3000/api/ranking"; // URL da API de ranking
+    const API_URL = "http://localhost:3000/api/save-score"; // URL da API para salvar pontuação
     const TOKEN = localStorage.getItem('token'); // Token JWT do jogador (se necessário)
 
     if (!TOKEN) {
@@ -35,7 +35,7 @@ async function enviarResultadoParaRanking(nome, pontos) {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${TOKEN}`
             },
-            body: JSON.stringify({ username: nome, score: pontos })
+            body: JSON.stringify({ score: pontos }) // Envia apenas a pontuação, pois o nome do jogador já está no token
         });
 
         if (!response.ok) throw new Error("Erro ao enviar resultado para o ranking");

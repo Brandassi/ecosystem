@@ -3,10 +3,19 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
 
     const username = document.getElementById("registerUsername").value;
     const password = document.getElementById("registerPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
     // Limpar a mensagem de feedback anterior
     const feedbackMessage = document.getElementById("feedbackMessage");
     feedbackMessage.style.display = 'none';
+
+    // Verifica se as senhas coincidem
+    if (password !== confirmPassword) {
+        feedbackMessage.textContent = "As senhas não coincidem. Por favor, tente novamente.";
+        feedbackMessage.className = "feedback-message error"; // Adiciona a classe de erro
+        feedbackMessage.style.display = 'block';
+        return; // Não envia o formulário se as senhas não coincidirem
+    }
 
     try {
         // Fazendo a requisição POST para a API
