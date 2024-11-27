@@ -1,30 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const respostasCertas = document.getElementById('respostas-certas');
+    const respostasCertasElement = document.getElementById('respostas-certas');
     const acertos = localStorage.getItem('acertos') || 0;
-    respostasCertas.textContent = acertos;
+    respostasCertasElement.textContent = acertos;
 
-    // Nome do jogador (substituir pelo método real de captura, como um campo de input)
+    // Captura o nome do jogador do localStorage ou define como "Anônimo"
     const nomeJogador = localStorage.getItem('nomeJogador') || "Anônimo";
 
-    // Armazenar os dados para passar para o ranking
+    // Armazena os dados no localStorage para uso futuro, se necessário
     localStorage.setItem('nomeJogador', nomeJogador);
     localStorage.setItem('acertos', acertos);
 
-    // Salvar resultado no servidor
-    enviarResultadoParaRanking(nomeJogador, acertos);
+    // Salva o resultado no servidor
+    enviarResultadoParaRanking(acertos);
 
-    // Limpar dados do localStorage após salvar
+    // Limpa dados temporários após salvar
     localStorage.removeItem('acertos');
     localStorage.removeItem('nomeJogador');
 });
 
 // Função para enviar os resultados do quiz para a API
-async function enviarResultadoParaRanking(nome, pontos) {
+async function enviarResultadoParaRanking(pontos) {
     const API_URL = "http://localhost:3000/api/save-score"; // URL da API para salvar pontuação
-    const TOKEN = localStorage.getItem('token'); // Token JWT do jogador (se necessário)
+    const TOKEN = localStorage.getItem('token'); // Token JWT do jogador
 
     if (!TOKEN) {
         console.error("Token de autenticação não encontrado!");
+        alert("Você precisa estar logado para salvar sua pontuação.");
         return;
     }
 
@@ -33,14 +34,22 @@ async function enviarResultadoParaRanking(nome, pontos) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${TOKEN}`
+                Authorization: `Bearer ${TOKEN}` // Token enviado no cabeçalho
             },
-            body: JSON.stringify({ score: pontos }) // Envia apenas a pontuação, pois o nome do jogador já está no token
+            body: JSON.stringify({ score: parseInt(pontos, 10) }) // Envia a pontuação como número
         });
 
-        if (!response.ok) throw new Error("Erro ao enviar resultado para o ranking");
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Erro ao enviar resultado:", errorData.message);
+            alert("Erro ao salvar sua pontuação no servidor. Tente novamente.");
+            return;
+        }
+
         console.log("Resultado salvo com sucesso!");
+        alert("Sua pontuação foi salva no servidor!");
     } catch (error) {
         console.error("Erro ao enviar resultado:", error);
+        alert("Erro de conexão com o servidor. Tente novamente mais tarde.");
     }
 }

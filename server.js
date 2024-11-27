@@ -77,9 +77,10 @@ app.post("/api/verify-token", authenticateToken, (req, res) => {
 
 // Rota para salvar a pontuação
 app.post("/api/save-score", authenticateToken, (req, res) => {
-    const { score } = req.body;
-    const userId = req.user.id;
+    const { score } = req.body; // Pontuação enviada no corpo da requisição
+    const userId = req.user.id; // `user.id` obtido do token JWT
 
+    // Insere a pontuação no banco de dados
     db.query("INSERT INTO scores (user_id, score) VALUES (?, ?)", [userId, score], (err) => {
         if (err) {
             console.error("Erro ao salvar pontuação:", err);

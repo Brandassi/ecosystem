@@ -1,5 +1,5 @@
+const API_URL = "https://ecosystem-iota.vercel.app/ranking.html"; // Defina a URL correta para a rota do ranking
 
-const API_URL = "http://localhost:3000/api/ranking"; // Defina a URL correta para a rota do ranking
 // Função para buscar o ranking do servidor
 async function fetchRanking() {
     // Recupera o token armazenado no localStorage
@@ -12,6 +12,7 @@ async function fetchRanking() {
     }
 
     try {
+        // Realiza a requisição para buscar o ranking
         const response = await fetch(API_URL, {
             headers: {
                 Authorization: `Bearer ${TOKEN}`, // Usa o token recuperado
@@ -20,16 +21,24 @@ async function fetchRanking() {
         });
 
         if (!response.ok) throw new Error("Erro ao buscar ranking");
+
         const data = await response.json();
+
+        // Verifica se a API retornou dados válidos
+        if (!Array.isArray(data)) {
+            console.error("Dados inválidos recebidos da API:", data);
+            return [];
+        }
 
         // Mapeia os dados para incluir posição, avatar e medalhas
         return data.map((player, index) => ({
-            position: player.position, // Posição do ranking vinda da API
-            name: player.username,    // Nome do jogador
-            score: player.score,      // Pontuação do jogador
-            avatar: "pessoa.png",     // Usa o avatar fixo 'pessoa.png'
+            position: index + 1,  // Posição do ranking, começando de 1
+            name: player.username, // Nome do jogador
+            score: player.score,   // Pontuação do jogador
+            avatar: "pessoa.png",  // Usa o avatar fixo 'pessoa.png' para todos
             medal: index < 3 ? `medalha${index + 1}.png` : null // Medalha para os 3 primeiros
         }));
+
     } catch (error) {
         console.error("Erro ao buscar ranking:", error);
         return [];
@@ -41,6 +50,15 @@ function renderRanking(data) {
     const rankingList = document.querySelector(".ranking-list");
     rankingList.innerHTML = ""; // Limpa a lista existente
 
+    // Verifica se existem jogadores no ranking
+    if (data.length === 0) {
+        const noDataMessage = document.createElement("p");
+        noDataMessage.textContent = "Não há dados de ranking disponíveis.";
+        rankingList.appendChild(noDataMessage);
+        return;
+    }
+
+    // Renderiza os jogadores no ranking
     data.forEach((player) => {
         const rankItem = document.createElement("div");
         rankItem.classList.add("rank-item");

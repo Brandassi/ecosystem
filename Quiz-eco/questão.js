@@ -10,25 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let acertos = 0;
   let perguntas = [];
 
-  // Simula o usuário logado - Substituir com verificação real
-  const usuarioLogado = localStorage.getItem("usuarioLogado");
-
-  // Verifica se o usuário está logado
-  if (!usuarioLogado) {
-    alert("Por favor, faça login para acessar o quiz.");
-    window.location.href = "../login.html";
-    return;
-  }
-
   // Função para carregar as perguntas
   function carregarPergunta() {
     if (perguntaIndex >= perguntas.length) {
       // Salva os acertos no localStorage
-      const usuario = localStorage.getItem("usuarioLogado");
+      const usuario = localStorage.getItem("usuarioLogado") || "Anônimo";
       const acertosAntigos = JSON.parse(localStorage.getItem("ranking")) || [];
       acertosAntigos.push({ usuario, acertos });
+
       // Ordena o ranking em ordem decrescente de acertos
       acertosAntigos.sort((a, b) => b.acertos - a.acertos);
+
       // Armazena o novo ranking
       localStorage.setItem("ranking", JSON.stringify(acertosAntigos));
 
