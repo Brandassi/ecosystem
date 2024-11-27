@@ -1,3 +1,5 @@
+
+const API_URL = "http://localhost:3000/api/ranking"; // Defina a URL correta para a rota do ranking
 // Função para buscar o ranking do servidor
 async function fetchRanking() {
     // Recupera o token armazenado no localStorage

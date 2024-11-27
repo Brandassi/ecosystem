@@ -52,22 +52,28 @@ app.post("/api/login", (req, res) => {
     });
 });
 
-// Middleware para validar o token JWT
-function authenticateToken(req, res, next) {
-    const token = req.headers["authorization"];
-    if (!token) return res.status(403).json({ message: "Token necessário" });
 
-    jwt.verify(token, SECRET_KEY, (err, user) => {
-        if (err) return res.status(403).json({ message: "Token inválido" });
-        req.user = user;
-        next();
-    });
-}
 
 // Rota protegida: Bem-vindo
 app.get("/api/welcome", authenticateToken, (req, res) => {
     res.json({ message: `Bem-vindo, ${req.user.username}!` });
 });
+
+app.post("/api/verify-token", authenticateToken, (req, res) => {
+    res.status(200).json({ message: "Token válido." });
+  });
+  
+  function authenticateToken(req, res, next) {
+    const token = req.headers["authorization"];
+    if (!token) return res.status(403).json({ message: "Token necessário" });
+  
+    jwt.verify(token.split(" ")[1], SECRET_KEY, (err, user) => {
+      if (err) return res.status(403).json({ message: "Token inválido" });
+      req.user = user;
+      next();
+    });
+  }
+  
 
 // Rota para salvar a pontuação
 app.post("/api/save-score", authenticateToken, (req, res) => {
